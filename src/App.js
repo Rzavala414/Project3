@@ -1,6 +1,11 @@
 import React from "react";
-import GlobalStateTable from './components/GlobalStateTable'
+import LeaderBoardPage from './pages/LeaderBoardPage'
+import LoginPage from './pages/LoginPage'
+import NewGamePage from './pages/NewGamePage'
+import RulesNScoringPage from './pages/RulesNScoringPage'
+import UserHomeProfile from './UserHomeProfile'
 
+// Build Router
 function App() {
     return(
         <h1>Hello</h1>
