@@ -4,6 +4,7 @@ import NewGamePage from "./pages/NewGamePage";
 import LeaderboardPage from "./pages/LeaderBoardPage";
 import RulesNScoringPage from "./pages/RulesNScoringPage";
 import Navbar from "./components/NavBar";
+import LogoUserNav from "./components/LogoUserNav";
 
 class Dashboard extends Component {
     state = {
@@ -28,7 +29,8 @@ class Dashboard extends Component {
         }
         return (
             <div>
-                <h1>CribSmack</h1>
+                <LogoUserNav handleChangePage={this.setCurrentPage}/>
+                <h1>Dashboard</h1>
                 {currentPage}
                 <Navbar handleChangePage={this.setCurrentPage}/>
             </div>
