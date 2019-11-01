@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function IconTabs() {
+export default function IconTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -32,9 +32,9 @@ export default function IconTabs() {
         textColor="primary"
         aria-label="icon tabs example"
       >
-        <Tab icon={<PhoneIcon />} aria-label="phone" />
-        <Tab icon={<FavoriteIcon />} aria-label="favorite" />
-        <Tab icon={<PersonPinIcon />} aria-label="person" />
+        <Tab onClick={()=>props.handleChangePage("userPage")} icon={<PhoneIcon />} aria-label="phone" />
+        <Tab onClick={()=>props.handleChangePage("newGame")} icon={<FavoriteIcon />} aria-label="favorite" />
+        <Tab onClick={()=>props.handleChangePage("leaderboard")} icon={<PersonPinIcon />} aria-label="person" />
       </Tabs>
     </Paper>
   );
