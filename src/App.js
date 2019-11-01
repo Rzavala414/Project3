@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import NewGamePage from './pages/NewGamePage'
 import RulesNScoringPage from './pages/RulesNScoringPage'
 import Dashboard from "./Dashboard";
+import "./App.css" 
 
 // Build Router
 function App() {
