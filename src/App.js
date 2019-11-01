@@ -6,6 +6,7 @@ import LeaderboardPage from "./pages/LeaderBoardPage";
 import LoginPage from './pages/LoginPage'
 import NewGamePage from './pages/NewGamePage'
 import RulesNScoringPage from './pages/RulesNScoringPage'
+import Dashboard from "./Dashboard";
 
 // Build Router
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/LoginPage" component={LoginPage} />
           <Route exact path="/NewGamePage" component={NewGamePage} />
           <Route exact path="/RulesNScoringPage" component={RulesNScoringPage} />
+          <Route exact path="/Dashboard" component={Dashboard} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
       </div>
