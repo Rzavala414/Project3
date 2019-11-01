@@ -1,15 +1,29 @@
 import React from "react";
-import LeaderBoardPage from './pages/LeaderBoardPage'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import UserHomeProfile from './pages/UserHomeProfile'
+import LeaderboardPage from "./pages/LeaderBoardPage";
+
 import LoginPage from './pages/LoginPage'
 import NewGamePage from './pages/NewGamePage'
 import RulesNScoringPage from './pages/RulesNScoringPage'
-import UserHomeProfile from './UserHomeProfile'
 
 // Build Router
 function App() {
     return(
-        <h1>Hello</h1>
-    
+        <Router>
+      <div>
+        {/* <Nav /> */}
+        <Switch>
+          <Route exact path="/" component={UserHomeProfile} />
+          <Route exact path="/UserHomeProfile" component={UserHomeProfile} />
+          <Route exact path="/LeaderBoardPage" component={LeaderboardPage} />
+          <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/NewGamePage" component={NewGamePage} />
+          <Route exact path="/RulesNScoringPage" component={RulesNScoringPage} />
+          {/* <Route component={NoMatch} /> */}
+        </Switch>
+      </div>
+    </Router>
     )
 }
 // bring in components for router and route
