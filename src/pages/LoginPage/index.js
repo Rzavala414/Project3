@@ -5,8 +5,8 @@ export default class LoginPage extends Component {
     render() {
         return (
             <div>
-            <LoginForm/>
                 <h1>This is LoginPage</h1>
+            <LoginForm/>
             </div>
         )
     };
