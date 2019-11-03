@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import UserHomeProfile from './pages/UserHomeProfile'
+import UserHomeProfile from "./pages/UserHomeProfile";
 import LeaderboardPage from "./pages/LeaderBoardPage";
-
-import LoginPage from './pages/LoginPage'
-import NewGamePage from './pages/NewGamePage'
-import RulesNScoringPage from './pages/RulesNScoringPage'
+import CreateAccount from "./pages/CreateAccount";
+import LoginPage from './pages/LoginPage';
+import NewGamePage from './pages/NewGamePage';
+import RulesNScoringPage from './pages/RulesNScoringPage';
 import Dashboard from "./Dashboard";
 import "./App.css" 
 
@@ -19,6 +19,7 @@ function App() {
           <Route exact path="/" component={UserHomeProfile} />
           <Route exact path="/UserHomeProfile" component={UserHomeProfile} />
           <Route exact path="/LeaderBoardPage" component={LeaderboardPage} />
+          <Route exact path="/CreateAccount" component={CreateAccount} />
           <Route exact path="/LoginPage" component={LoginPage} />
           <Route exact path="/NewGamePage" component={NewGamePage} />
           <Route exact path="/RulesNScoringPage" component={RulesNScoringPage} />
