@@ -4,7 +4,7 @@ export default class GlobalStatsTable extends Component {
     render() {
         return (
             <div>
-                <h1>THis is GlobalStateTable</h1>
+                <h1>THis is GlobalStatsTable</h1>
             </div>
         )
     }

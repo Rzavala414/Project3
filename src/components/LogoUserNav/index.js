@@ -8,6 +8,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import GavelIcon from '@material-ui/icons/Gavel';
+import './style.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,12 +42,13 @@ export default function MenuAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className= "topNav">
         <Toolbar>
-          <IconButton onClick={()=>props.handleChangePage("rulesNScoring")} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton onClick={()=>props.handleChangePage("rulesNScoring")} edge="start" className={classes.menuButton} color="gray" aria-label="menu">
             <GavelIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
+            CribSmack
           </Typography>
           {auth && (
             <div>
@@ -55,7 +57,7 @@ export default function MenuAppBar(props) {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
-                color="inherit"
+                color="gray"
               >
                 <AccountCircle />
               </IconButton>

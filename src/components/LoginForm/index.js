@@ -176,7 +176,6 @@ export default class LoginForm extends Component {
             <form>
                 <input name="name" value={this.state.name} onChange={this.handleChange} />
                 <input name="password" value={this.state.password} type="password" onChange={this.handleChange} />
-                <input name="email" value={this.state.email} onChange={this.handleChange} />
                 <input type="submit" onClick={this.handleLoginFormSubmit} />
             </form>
         <button onClick={this.readSessions}>Readsessions</button>
