@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import GlobalStatsTable from '../../components/GlobalStatsTable';
 
 // import GlobalStateTable from '../../components/GlobalStateTable'
 export default class LeaderboardPage extends Component {
@@ -6,7 +7,7 @@ export default class LeaderboardPage extends Component {
         return (
             <div>
                 <h1>This is LeaderBoardPage</h1>
-                
+                <GlobalStatsTable />
             </div>
         )
     }
