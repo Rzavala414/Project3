@@ -38,7 +38,9 @@ class Dashboard extends Component {
         }
         return (
             <div className="dashboardComponents">
-                <LogoUserNav handleChangePage={this.setCurrentPage} />
+                <div className="topNav">
+                    <LogoUserNav handleChangePage={this.setCurrentPage} />
+                </div>
                 <div className="currentPageParent">
                     <div className="currentPage">
                         {currentPage}

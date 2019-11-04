@@ -1,0 +1,6 @@
+.rules {
+    display: flex;
+    flex-wrap: center;
+    flex-direction: column;
+    
+}
