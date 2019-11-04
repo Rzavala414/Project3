@@ -5,13 +5,16 @@ import LeaderboardPage from "./pages/LeaderBoardPage";
 import RulesNScoringPage from "./pages/RulesNScoringPage";
 import Navbar from "./components/NavBar";
 import LogoUserNav from "./components/LogoUserNav";
+import LoginPage from "./pages/LoginPage";
+import CreateAccount from "./pages/CreateAccount";
+import './Dashboard.css'
 
 class Dashboard extends Component {
     state = {
-        page:"userPage"
+        page: "userPage"
     }
-    setCurrentPage=(page)=>{
-        this.setState({page});
+    setCurrentPage = (page) => {
+        this.setState({ page });
     }
     render() {
         let currentPage;
@@ -27,12 +30,23 @@ class Dashboard extends Component {
         else if (this.state.page === "rulesNScoring") {
             currentPage = <RulesNScoringPage />
         }
+        else if (this.state.page === "loginpage") {
+            currentPage = <LoginPage />
+        }
+        else if (this.state.page === "createaccount") {
+            currentPage = <CreateAccount />
+        }
         return (
-            <div>
-                <LogoUserNav handleChangePage={this.setCurrentPage}/>
-                <h1>Dashboard</h1>
-                {currentPage}
-                <Navbar handleChangePage={this.setCurrentPage}/>
+            <div className="dashboardComponents">
+                <LogoUserNav handleChangePage={this.setCurrentPage} />
+                <div className="currentPageParent">
+                    <div className="currentPage">
+                        {currentPage}
+                    </div>
+                </div>
+                <div className="navbar">
+                    <Navbar handleChangePage={this.setCurrentPage} />
+                </div>
             </div>
         )
     }

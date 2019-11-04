@@ -23,13 +23,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuAppBar(props) {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
+  const [auth] = React.useState(true);
+  // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleChange = event => {
-    setAuth(event.target.checked);
-  };
+  // const handleChange = event => {
+  //   setAuth(event.target.checked);
+  // };
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -74,8 +75,8 @@ export default function MenuAppBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Log In</MenuItem>
-                <MenuItem onClick={handleClose}>Create Account</MenuItem>
+                <MenuItem onClick={()=>props.handleChangePage("loginpage")}>Log In</MenuItem>
+                <MenuItem onClick={()=>props.handleChangePage("createaccount")}>Create Account</MenuItem>
               </Menu>
             </div>
           )}
