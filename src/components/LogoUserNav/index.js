@@ -74,8 +74,8 @@ export default function MenuAppBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Log In</MenuItem>
-                <MenuItem onClick={handleClose}>Create Account</MenuItem>
+                <MenuItem onClick={()=>props.handleChangePage("loginpage")}>Log In</MenuItem>
+                <MenuItem onClick={()=>props.handleChangePage("createaccount")}>Create Account</MenuItem>
               </Menu>
             </div>
           )}
