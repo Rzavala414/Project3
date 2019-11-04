@@ -38,9 +38,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
+import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
+import PersonIcon from '@material-ui/icons/Person';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const useStyles = makeStyles({
   root: {
@@ -67,9 +68,9 @@ export default function IconTabs(props) {
         textColor="primary"
         aria-label="icon tabs example"
       >
-        <Tab onClick={()=>props.handleChangePage("userPage")} icon={<PhoneIcon />} aria-label="phone" />
-        <Tab onClick={()=>props.handleChangePage("newGame")} icon={<FavoriteIcon />} aria-label="favorite" />
-        <Tab onClick={()=>props.handleChangePage("leaderboard")} icon={<PersonPinIcon />} aria-label="person" />
+        <Tab onClick={()=>props.handleChangePage("userPage")} icon={<PersonIcon />} aria-label="phone" />
+        <Tab onClick={()=>props.handleChangePage("newGame")} icon={<PlayArrowIcon />} aria-label="favorite" />
+        <Tab onClick={()=>props.handleChangePage("leaderboard")} icon={<EmojiEventsIcon />} aria-label="person" />
       </Tabs>
     </Paper>
   );
