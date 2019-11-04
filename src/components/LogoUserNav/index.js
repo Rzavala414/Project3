@@ -4,10 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import GavelIcon from '@material-ui/icons/Gavel';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,7 +44,7 @@ export default function MenuAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <IconButton onClick={()=>props.handleChangePage("rulesNScoring")} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <GavelIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
           </Typography>
@@ -74,7 +74,7 @@ export default function MenuAppBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Login</MenuItem>
+                <MenuItem onClick={handleClose}>Log In</MenuItem>
                 <MenuItem onClick={handleClose}>Create Account</MenuItem>
               </Menu>
             </div>
