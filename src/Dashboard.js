@@ -5,6 +5,8 @@ import LeaderboardPage from "./pages/LeaderBoardPage";
 import RulesNScoringPage from "./pages/RulesNScoringPage";
 import Navbar from "./components/NavBar";
 import LogoUserNav from "./components/LogoUserNav";
+import LoginPage from "./pages/LoginPage";
+import CreateAccount from "./pages/CreateAccount";
 import './Dashboard.css'
 
 class Dashboard extends Component {
@@ -27,6 +29,12 @@ class Dashboard extends Component {
         }
         else if (this.state.page === "rulesNScoring") {
             currentPage = <RulesNScoringPage />
+        }
+        else if (this.state.page === "loginpage") {
+            currentPage = <LoginPage />
+        }
+        else if (this.state.page === "createaccount") {
+            currentPage = <CreateAccount />
         }
         return (
             <div className="dashboardComponents">
