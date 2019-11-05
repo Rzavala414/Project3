@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import GavelIcon from '@material-ui/icons/Gavel';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,8 +78,12 @@ export default function MenuAppBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={()=>props.handleChangePage("loginpage")}>Log In</MenuItem>
-                <MenuItem onClick={()=>props.handleChangePage("createaccount")}>Create Account</MenuItem>
+              <Link to={"/login"}>
+                <MenuItem>Log In</MenuItem>
+              </Link>
+              <Link to={"/createaccount"}>
+                <MenuItem>Create Account</MenuItem>
+              </Link>
               </Menu>
             </div>
           )}

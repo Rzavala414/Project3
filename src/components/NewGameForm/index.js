@@ -123,7 +123,7 @@ export default class NewGameForm extends Component {
 
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
         <div className="a"></div>
         <div className="box b">{this.state.user}</div>
         <div className="box c">{this.state.user}avg</div>
