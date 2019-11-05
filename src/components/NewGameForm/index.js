@@ -9,25 +9,34 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
 export default class NewGameForm extends Component {
+  //TODO: Figure out how to place 1 session user in gamecard, add dropdown for 2nd user to bring in session
   state = {
-    userOnePlay: "",
-    userOnePlayAvg: "",
-    userOneCount: "",
-    userOneCountAvg: "",
-    userOneCrib: "",
-    userOneCribAvg: "",
-    userOneTotal: "",
+    userOne: "Joe",
+    userTwo: "Also Joe",
+    userOnePlay: 0,
+    userOneCount: 0,
+    userOneCrib: 0,
+    userOneTotal: 0,
+    userTwoPlay: 0,
+    userTwoCount: 0,
+    userTwoCrib: 0,
+    userTwoTotal: 0,
+    hands: [
+    //   {
+    //     userOnePlay:0,
+    //     userOneCount: 0,
+    //     userTwoPlay: 0,
+    //     userTwoCount: 0,
+    //     userOneCrib: 0,
+    //     userTwoCrib: 0
+    //   },
+    
+    ],
 
-    userTwoPlay: "",
-    userTwoPlayAvg: "",
-    userTwoCount: "",
-    userTwoCountAvg: "",
-    userTwoCrib: "",
-    userTwoCribAvg: "",
-    userTwoTotal: ""
-
-    // url:"http://localhost:8080",
+    url: "http://localhost:3001/"
+    // url:"http://github.io.rzavalia....."
   };
+
   // componentDidMount(){
   //   this.readSessions();
   //   this.getAllManatees();
@@ -39,51 +48,35 @@ export default class NewGameForm extends Component {
       [name]: value
     });
   };
-
+  //TODO: Finsh this method!!!
   handleNextHandSubmit = event => {
     if (event) {
       event.preventDefault();
     }
-    const userOnePlayAvg = 0;
-   const userOneCountAvg = 0;
-   const userOneAvg = 0;
-   const userOneTotal = 0;
-   const userTwoPlayAvg = 0;
-   const userTwoCountAvg = 0;
-   const userTwoCribAvg = 0;
-   const userTwoTotal = 0;
+    let total = 0;
+    this.state.hands.forEach(hand => {
+      total += parseInt(hand[property]);
+      console.log(hand[property]);
+    });
+    return total / this.state.hands.length;
+  };
+  findTotal = user => {
+    let total = 0;
 
-//   
-//    need to make an array for the numbers to get pushed into
-    
-    // console.log(this.state)
-    // change route to match backend
-    axios
-      .post(
-        `${this.state.url}/auth/login`,
-        { name: this.state.name, password: this.state.password },
-        { withCredentials: true }
-      )
-      .then(res => {
-        console.log(res.data, res.status);
-        this.setState({
-          name: "",
-          password: "",
-          loggedInUser: res.data.user
-        });
-        this.getAllStats();
-      })
-      .catch(err => {
-        console.log(err.response);
-        this.setState({
-          userOnePlay: "",
-          userOneCount: "",
-          userOneCrib: "",
-          userTwoPlay: "",
-          userTwoCount: "",
-          userTwoCrib: ""
-        });
-      });
+    this.state.hands.forEach(hand => {
+      if (user === "one") {
+        total +=
+          parseInt(hand["userOneCount"]) +
+          parseInt(hand["userOneCrib"]) +
+          parseInt(hand["userOnePlay"]);
+      } else if (user === "two") {
+        total +=
+          parseInt(hand["userTwoCount"]) +
+          parseInt(hand["userTwoCrib"]) +
+          parseInt(hand["userTwoPlay"]);
+      }
+    });
+    return total;
   };
 
   render() {
@@ -95,7 +88,7 @@ export default class NewGameForm extends Component {
         <div className="box d">{this.state.user2}</div>
         <div className="box e">{this.state.user2}avg</div>
 
-        <div className="box f">play</div>
+        <div className="box f">The Play</div>
         <input
           className="box user-one-play"
           value={this.state.userOnePlay}
@@ -103,8 +96,10 @@ export default class NewGameForm extends Component {
           type="number"
           name="userOnePlay"
         ></input>
-        <div className="box user-one-play-avg"
-        >{this.state.userOnePlayAvg}</div>
+        {/* <div className="box user-one-play-avg">{this.state.hands.reduce((total,hand)=>hand.userOnePlay+ total,0)/this.state.hands.length}</div> */}
+        <div className="box user-one-play-avg" type="number" max="9999" >
+          {this.findAverage("userOnePlay")}
+        </div>
         <input
           className="box user-two-play"
           value={this.state.userTwoPlay}
@@ -113,18 +108,18 @@ export default class NewGameForm extends Component {
           name="userTwoPlay"
         ></input>
         <div className="box user-two-play-avg">
-        {this.state.userTwoPlayAvg}</div>
-        <div className="box f">count</div>
-        
+          {this.findAverage("userTwoPlay")}
+        </div>
+        <div className="box f">The Count</div>
+
         <input
           className="box user-one-count"
-          value={this.state.userOneCount}
           onChange={this.handleChange}
           type="number"
           name="userOneCount"
         ></input>
         <div className="box user-one-count-avg">
-          {this.state.userOneCountAvg}
+          {this.findAverage("userOneCount")}
         </div>
         <input
           className="box user-two-count"
@@ -134,10 +129,10 @@ export default class NewGameForm extends Component {
           name="userTwoCount"
         ></input>
         <div className="box user-two-count-avg">
-          {this.state.userTwoCountAvg}
+          {this.findAverage("userTwoCount")}
         </div>
 
-        <div className="box f">crib</div>
+        <div className="box f">The Crib</div>
         <input
           className="box user-one-crib"
           value={this.state.userOneCrib}
@@ -145,8 +140,9 @@ export default class NewGameForm extends Component {
           type="number"
           name="userOneCrib"
         ></input>
-        <div className="box user-one-crib-avg"
-        >{this.state.userOneCribAvg}</div>
+        <div className="box user-one-crib-avg">
+          {this.findAverage("userOneCrib")}
+        </div>
         <input
           className="box user-two-crib"
           value={this.state.userTwoCrib}
@@ -154,32 +150,32 @@ export default class NewGameForm extends Component {
           type="number"
           name="userTwoCrib"
         ></input>
-        <div className="box user-two-crib-avg"
-        >{this.state.userTwoCribAvg}</div>
-
-        <div className="box f">total</div>
-        <div
-          className="box user-one-total"
-          value={this.state.userOneTotal}
-        //   onChange={this.handleChange}
-        //   type="number"
-        //   name="userOneTotal"
-        ></div>
-        <div className="box user-one-total-avg">
-          {this.state.userOneTotalAvg}
-        </div>
-        <div
-          className="box user-two-total"
-          value={this.state.userTwoTotal}
-        //   onChange={this.handleChange}
-        //   type="number"
-        //   name="userTwoTotal"
-        ></div>
-        <div className="box user-two-total-avg">
-          {this.state.userTwoTotalAvg}
+        <div className="box user-two-crib-avg">
+          {this.findAverage("userTwoCrib")}
         </div>
 
-        <button class="w3-button w3-ripple w3-red" onClick={this.handleNextHandSubmit}>Next Hand</button>
+        <div className="box f">Game Score</div>
+        
+        <div className="box user-one-total-avg">{this.findTotal("one")}</div>
+        <div>
+          {/* {this.findTotal("one") / this.state.hands.length} */}
+        </div>
+        <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
+        <div>
+          {/* {this.findTotal("two") / this.state.hands.length} */}
+        </div>
+        <button
+          className="w3-button w3-ripple w3-red"
+          onClick={this.handleNextHandSubmit}
+        >
+          Next Hand
+        </button>
+        <button
+          className="w3-button w3-ripple w3-blue"
+          onClick={this.handleNewGameSubmit}
+        >
+          New Game
+        </button>
       </div>
     );
   }
