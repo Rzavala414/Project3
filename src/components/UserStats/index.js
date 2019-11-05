@@ -8,24 +8,26 @@ export default class UserStats extends Component {
                 <h1>UserStats</h1>
                 <div className="box1">
                     <p>
-                        Games Won: ""
+                        Win Percentage: ""
                         <br/>
-                        Games Lost: ""
+                        Games Played: ""
                         <br/>
                     </p>
                 </div>
                 <div className="box2">
                     <p>
-                        Avg Games: ""
+                        Play Average: ""
                         <br/>
-                        Streak: ""
+                        Count Average: ""
+                        <br/>
+                        Crib Average: ""
                     </p>
                 </div>
                 <div className="box3">
                     <p>
-                        Hands Won: ""
+                        Skunks Given: ""
                         <br/>
-                        Avg Hand: ""
+                        Skunks Recieved: ""
                     </p>
                 </div>
             </div>
