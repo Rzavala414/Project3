@@ -44,6 +44,19 @@ export default class NewGameForm extends Component {
     if (event) {
       event.preventDefault();
     }
+    const userOnePlayAvg = 0;
+   const userOneCountAvg = 0;
+   const userOneAvg = 0;
+   const userOneTotal = 0;
+   const userTwoPlayAvg = 0;
+   const userTwoCountAvg = 0;
+   const userTwoCribAvg = 0;
+   const userTwoTotal = 0;
+
+//   
+//    need to make an array for the numbers to get pushed into
+    
+    // console.log(this.state)
     // change route to match backend
     axios
       .post(
@@ -145,28 +158,28 @@ export default class NewGameForm extends Component {
         >{this.state.userTwoCribAvg}</div>
 
         <div className="box f">total</div>
-        <input
+        <div
           className="box user-one-total"
           value={this.state.userOneTotal}
-          onChange={this.handleChange}
-          type="number"
-          name="userOneTotal"
-        ></input>
+        //   onChange={this.handleChange}
+        //   type="number"
+        //   name="userOneTotal"
+        ></div>
         <div className="box user-one-total-avg">
           {this.state.userOneTotalAvg}
         </div>
-        <input
+        <div
           className="box user-two-total"
           value={this.state.userTwoTotal}
-          onChange={this.handleChange}
-          type="number"
-          name="userTwoTotal"
-        ></input>
+        //   onChange={this.handleChange}
+        //   type="number"
+        //   name="userTwoTotal"
+        ></div>
         <div className="box user-two-total-avg">
           {this.state.userTwoTotalAvg}
         </div>
 
-      
+        <button class="w3-button w3-ripple w3-red" onClick={this.handleNextHandSubmit}>Next Hand</button>
       </div>
     );
   }
