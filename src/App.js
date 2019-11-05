@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage';
 import NewGamePage from './pages/NewGamePage';
 import RulesNScoringPage from './pages/RulesNScoringPage';
 import Dashboard from "./Dashboard";
+import LandingPage from "./pages/LandingPage/landingPage";
 import "./App.css" 
 
 // Build Router
@@ -16,7 +17,7 @@ function App() {
       <div>
         {/* <Nav /> */}
         <Switch>
-          <Route exact path="/" component={UserHomeProfile} />
+          <Route exact path="/" component={LandingPage} />
           <Route exact path="/userprofile" component={UserHomeProfile} />
           <Route exact path="/leaderboard" component={LeaderboardPage} />
           <Route exact path="/createaccount" component={CreateAccount} />
