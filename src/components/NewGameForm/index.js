@@ -90,7 +90,8 @@ export default class NewGameForm extends Component {
           type="number"
           name="userOnePlay"
         ></input>
-        <div className="box user-one-play-avg">{this.state.userOnePlayAvg}</div>
+        <div className="box user-one-play-avg"
+        >{this.state.userOnePlayAvg}</div>
         <input
           className="box user-two-play"
           value={this.state.userTwoPlay}
@@ -165,9 +166,7 @@ export default class NewGameForm extends Component {
           {this.state.userTwoTotalAvg}
         </div>
 
-        {/* <Button variant="contained" className={classes.button}>
-                    Next Hand
-                </Button> */}
+      
       </div>
     );
   }
