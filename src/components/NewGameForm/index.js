@@ -101,7 +101,7 @@ export default class NewGameForm extends Component {
           parseInt(hand["userTwoPlay"]);
       }
     });
-    return total;
+    return total.toFixed(2);
   };
 
   render() {
