@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage';
 import NewGamePage from './pages/NewGamePage';
 import RulesNScoringPage from './pages/RulesNScoringPage';
 import Dashboard from "./Dashboard";
+import LandingPage from "./pages/LandingPage/landingPage";
 import "./App.css" 
 
 // Build Router
@@ -16,13 +17,13 @@ function App() {
       <div>
         {/* <Nav /> */}
         <Switch>
-          <Route exact path="/" component={UserHomeProfile} />
-          <Route exact path="/UserHomeProfile" component={UserHomeProfile} />
-          <Route exact path="/LeaderBoardPage" component={LeaderboardPage} />
-          <Route exact path="/CreateAccount" component={CreateAccount} />
-          <Route exact path="/LoginPage" component={LoginPage} />
-          <Route exact path="/NewGamePage" component={NewGamePage} />
-          <Route exact path="/RulesNScoringPage" component={RulesNScoringPage} />
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/userprofile" component={UserHomeProfile} />
+          <Route exact path="/leaderboard" component={LeaderboardPage} />
+          <Route exact path="/createaccount" component={CreateAccount} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/newgamepage" component={NewGamePage} />
+          <Route exact path="/rulesnscoringpage" component={RulesNScoringPage} />
           <Route exact path="/Dashboard" component={Dashboard} />
           {/* <Route component={NoMatch} /> */}
         </Switch>

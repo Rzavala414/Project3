@@ -4,17 +4,21 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
+  grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
   grid-gap: 0.5vw;
   background-color: rgb(41, 28, 41);
-  color: #444;
+  
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
+  background-color: rgb(90, 8, 241);
+  color:whitesmoke;
   border-radius: 0.25vw;
   padding: 1vw;
   font-size: 2.5vw;
   text-align: center;
+}
+
+.end-game-button{
+  background-color: #bada55;
 }

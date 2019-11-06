@@ -11,15 +11,15 @@ import Grid from "@material-ui/core/Grid";
 export default class NewGameForm extends Component {
   //TODO: Figure out how to place 1 session user in gamecard, add dropdown for 2nd user to bring in session
   state = {
-    userOne: "Joe",
-    userTwo: "Also Joe",
+    userOne: "",
+    userTwo: "",
     userOnePlay: 0,
     userOneCount: 0,
-    userOneCrib: 0,
+    userOneCrib: "",
     userOneTotal: 0,
     userTwoPlay: 0,
     userTwoCount: 0,
-    userTwoCrib: 0,
+    userTwoCrib: "",
     userTwoTotal: 0,
     hands: [
     //   {
@@ -48,11 +48,36 @@ export default class NewGameForm extends Component {
       [name]: value
     });
   };
-  //TODO: Finsh this method!!!
+
   handleNextHandSubmit = event => {
     if (event) {
       event.preventDefault();
     }
+
+    let newHand = { ...this.state };
+    delete newHand.hands;
+    let newStateHands = this.state.hands;
+    newStateHands.push(newHand);
+    console.log(newStateHands);
+    this.setState({
+      hands: newStateHands
+    });
+    //TODO: Alternate Cribs so non-crib doesn't equal zero
+  };
+
+  handleEndGameSubmit = event => {
+    if (event){
+        event.preventDefault();
+    }
+    axios
+    .post(
+        `${this.state.url}/gamecard`,
+        { name: this.state.name, password: this.state.password },
+ 
+    )
+};
+    
+  findAverage = property => {
     let total = 0;
     this.state.hands.forEach(hand => {
       total += parseInt(hand[property]);
@@ -81,7 +106,7 @@ export default class NewGameForm extends Component {
 
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
         <div className="a"></div>
         <div className="box b">{this.state.user}</div>
         <div className="box c">{this.state.user}avg</div>
@@ -165,18 +190,17 @@ export default class NewGameForm extends Component {
           {/* {this.findTotal("two") / this.state.hands.length} */}
         </div>
         <button
-          className="w3-button w3-ripple w3-red"
+          className="next-hand-button"
           onClick={this.handleNextHandSubmit}
         >
           Next Hand
         </button>
         <button
-          className="w3-button w3-ripple w3-blue"
+          className="end-game-button"
           onClick={this.handleNewGameSubmit}
         >
           New Game
         </button>
       </div>
-    );
-  }
-}
+    )};
+    }
