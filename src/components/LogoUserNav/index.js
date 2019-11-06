@@ -9,6 +9,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import GavelIcon from '@material-ui/icons/Gavel';
 import './style.css';
+import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,67 +25,95 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function MenuAppBar(props) {
-  const classes = useStyles();
-  const [auth] = React.useState(true);
-  // const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
 
-  // const handleChange = event => {
-  //   setAuth(event.target.checked);
-  // };
+  // state = {
+  //   redirect: false
+  // }
+  // setRedirect = () => {
+  //   this.setState({
+  //     redirect: true
+  //   })
+  // }
+  // renderRedirect = () => {
+  //   if (this.state.redirect) {
+  //     return <Redirect to='/' />
+  //   }
+  // }
+  // render () {
+  //   return (
+  //      <div>
+  //       {this.renderRedirect()}
+  //       <button onClick={this.setRedirect}>Redirect</button>
+  //      </div>
+  //   )
+  // }
+// }
 
-  const handleMenu = event => {
-    setAnchorEl(event.currentTarget);
-  };
+const classes = useStyles();
+const [auth] = React.useState(true);
+// const [auth, setAuth] = React.useState(true);
+const [anchorEl, setAnchorEl] = React.useState(null);
+const open = Boolean(anchorEl);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+// const handleChange = event => {
+//   setAuth(event.target.checked);
+// };
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" className= "topNav">
-        <Toolbar>
-          <IconButton onClick={()=>props.handleChangePage("rulesNScoring")} edge="start" className={classes.menuButton} color="gray" aria-label="menu">
-            <GavelIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            CribSmack
+const handleMenu = event => {
+  setAnchorEl(event.currentTarget);
+};
+
+const handleClose = () => {
+  setAnchorEl(null);
+};
+
+return (
+  <div className={classes.root}>
+    <AppBar position="static" className="topNav">
+      <Toolbar>
+        {/* {this.renderRedirect()} */}
+        <IconButton onClick={()=>props.handleChangePage("landingPage")} edge="start" className={classes.menuButton} color="gray" aria-label="menu">
+          <GavelIcon />
+        </IconButton>
+        <Typography variant="h6" className={classes.title}>
+          CribSmack
           </Typography>
-          {auth && (
-            <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="gray"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={()=>props.handleChangePage("loginpage")}>Log In</MenuItem>
-                <MenuItem onClick={()=>props.handleChangePage("createaccount")}>Create Account</MenuItem>
-              </Menu>
-            </div>
-          )}
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-}
+        {auth && (
+          <div>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="gray"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <Link to={"/login"}>
+                <MenuItem>Log In</MenuItem>
+              </Link>
+              <Link to={"/createaccount"}>
+                <MenuItem>Create Account</MenuItem>
+              </Link>
+            </Menu>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
+  </div>
+)}
