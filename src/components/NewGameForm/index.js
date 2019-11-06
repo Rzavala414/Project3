@@ -22,15 +22,14 @@ export default class NewGameForm extends Component {
     userTwoCrib: "",
     userTwoTotal: 0,
     hands: [
-    //   {
-    //     userOnePlay:0,
-    //     userOneCount: 0,
-    //     userTwoPlay: 0,
-    //     userTwoCount: 0,
-    //     userOneCrib: 0,
-    //     userTwoCrib: 0
-    //   },
-    
+      //   {
+      //     userOnePlay:0,
+      //     userOneCount: 0,
+      //     userTwoPlay: 0,
+      //     userTwoCount: 0,
+      //     userOneCrib: 0,
+      //     userTwoCrib: 0
+      //   },
     ],
 
     url: "http://localhost:3001/"
@@ -66,24 +65,22 @@ export default class NewGameForm extends Component {
   };
 
   handleEndGameSubmit = event => {
-    if (event){
-        event.preventDefault();
+    if (event) {
+      event.preventDefault();
     }
-    axios
-    .post(
-        `${this.state.url}/gamecard`,
-        { name: this.state.name, password: this.state.password },
- 
-    )
-};
-    
+    axios.post(`${this.state.url}/gamecard`, {
+      name: this.state.name,
+      password: this.state.password
+    });
+  };
+
   findAverage = property => {
     let total = 0;
     this.state.hands.forEach(hand => {
       total += parseInt(hand[property]);
       console.log(hand[property]);
     });
-    return total / this.state.hands.length;
+    return (total / this.state.hands.length).toFixed(2);
   };
   findTotal = user => {
     let total = 0;
@@ -101,7 +98,7 @@ export default class NewGameForm extends Component {
           parseInt(hand["userTwoPlay"]);
       }
     });
-    return total.toFixed(2);
+    return total;
   };
 
   render() {
@@ -122,7 +119,7 @@ export default class NewGameForm extends Component {
           name="userOnePlay"
         ></input>
         {/* <div className="box user-one-play-avg">{this.state.hands.reduce((total,hand)=>hand.userOnePlay+ total,0)/this.state.hands.length}</div> */}
-        <div className="box user-one-play-avg" type="number" max="9999" >
+        <div className="box user-one-play-avg" type="number" max="9999">
           {this.findAverage("userOnePlay")}
         </div>
         <input
@@ -180,27 +177,21 @@ export default class NewGameForm extends Component {
         </div>
 
         <div className="box f">Game Score</div>
-        
+
         <div className="box user-one-total-avg">{this.findTotal("one")}</div>
-        <div>
-          {/* {this.findTotal("one") / this.state.hands.length} */}
-        </div>
+        <div>{/* {this.findTotal("one") / this.state.hands.length} */}</div>
         <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
-        <div>
-          {/* {this.findTotal("two") / this.state.hands.length} */}
-        </div>
+        <div>{/* {this.findTotal("two") / this.state.hands.length} */}</div>
         <button
           className="next-hand-button"
           onClick={this.handleNextHandSubmit}
         >
           Next Hand
         </button>
-        <button
-          className="end-game-button"
-          onClick={this.handleNewGameSubmit}
-        >
+        <button className="end-game-button" onClick={this.handleNewGameSubmit}>
           New Game
         </button>
       </div>
-    )};
-    }
+    );
+  }
+}
