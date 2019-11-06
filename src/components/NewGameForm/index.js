@@ -106,9 +106,9 @@ export default class NewGameForm extends Component {
       <div className="wrapper">
         <div className="a"></div>
         <div className="box b">{this.state.user}</div>
-        <div className="box c">{this.state.user}avg</div>
+        {/* <div className="box c">{this.state.user}avg</div> */}
         <div className="box d">{this.state.user2}</div>
-        <div className="box e">{this.state.user2}avg</div>
+        {/* <div className="box e">{this.state.user2}avg</div> */}
 
         <div className="box f">The Play</div>
         <input
@@ -119,9 +119,9 @@ export default class NewGameForm extends Component {
           name="userOnePlay"
         ></input>
         {/* <div className="box user-one-play-avg">{this.state.hands.reduce((total,hand)=>hand.userOnePlay+ total,0)/this.state.hands.length}</div> */}
-        <div className="box user-one-play-avg" type="number" max="9999">
+        {/* <div className="box user-one-play-avg" type="number" max="9999">
           {this.findAverage("userOnePlay")}
-        </div>
+        </div> */}
         <input
           className="box user-two-play"
           value={this.state.userTwoPlay}
@@ -129,9 +129,9 @@ export default class NewGameForm extends Component {
           type="number"
           name="userTwoPlay"
         ></input>
-        <div className="box user-two-play-avg">
+        {/* <div className="box user-two-play-avg">
           {this.findAverage("userTwoPlay")}
-        </div>
+        </div> */}
         <div className="box f">The Count</div>
 
         <input
@@ -140,9 +140,9 @@ export default class NewGameForm extends Component {
           type="number"
           name="userOneCount"
         ></input>
-        <div className="box user-one-count-avg">
+        {/* <div className="box user-one-count-avg">
           {this.findAverage("userOneCount")}
-        </div>
+        </div> */}
         <input
           className="box user-two-count"
           value={this.state.userTwoCount}
@@ -150,9 +150,9 @@ export default class NewGameForm extends Component {
           type="number"
           name="userTwoCount"
         ></input>
-        <div className="box user-two-count-avg">
+        {/* <div className="box user-two-count-avg">
           {this.findAverage("userTwoCount")}
-        </div>
+        </div> */}
 
         <div className="box f">The Crib</div>
         <input
@@ -162,9 +162,9 @@ export default class NewGameForm extends Component {
           type="number"
           name="userOneCrib"
         ></input>
-        <div className="box user-one-crib-avg">
+        {/* <div className="box user-one-crib-avg">
           {this.findAverage("userOneCrib")}
-        </div>
+        </div> */}
         <input
           className="box user-two-crib"
           value={this.state.userTwoCrib}
@@ -172,29 +172,18 @@ export default class NewGameForm extends Component {
           type="number"
           name="userTwoCrib"
         ></input>
-        <div className="box user-two-crib-avg">
+        {/* <div className="box user-two-crib-avg">
           {this.findAverage("userTwoCrib")}
-        </div>
+        </div> */}
 
         <div className="box f">Game Score</div>
 
         <div className="box user-one-total-avg">{this.findTotal("one")}</div>
-        <div>{/* {this.findTotal("one") / this.state.hands.length} */}</div>
+        {/* <div>{this.findTotal("one") / this.state.hands.length}</div> */}
         <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
-        <div>{/* {this.findTotal("two") / this.state.hands.length} */}</div>
+        {/* <div>{this.findTotal("two") / this.state.hands.length}</div> */}
 
-        <div class="box a">A</div>
-  <div class="box b">B</div>
-  <div class="box c">C</div>
-  <div class="box d">D</div>
-  <div class="box e">E</div>
-  <div class="box f">F</div>
-    <div class="box g">G</div>
-    <div class="box h">H</div>
-    <div class="box i">I</div>
-    <div class="box j">J</div>
-    <div class="box k">K</div>
-    <div class="box l">L</div>
+
 
         <button
           className="next-hand-button"
@@ -205,6 +194,36 @@ export default class NewGameForm extends Component {
         <button className="end-game-button" onClick={this.handleNewGameSubmit}>
           New Game
         </button>
+        <div className="box"></div>
+        
+        <div class="box a">avg</div>
+        <div class="box b">head</div>
+        <div class="box c">here</div>
+        
+        <div className="box f">The Play</div>
+        <div className="box user-one-play-avg" type="number" max="9999">
+          {this.findAverage("userOnePlay")}
+        </div>
+        <div className="box user-two-play-avg">
+          {this.findAverage("userTwoPlay")}
+        </div>
+        
+        <div className="box f">The Count</div>
+        <div className="box user-one-count-avg">
+          {this.findAverage("userOneCount")}
+        </div>
+        <div className="box user-two-count-avg">
+          {this.findAverage("userTwoCount")}
+        </div>
+
+        <div className="box f">The Crib</div>
+        <div className="box user-one-crib-avg">
+          {this.findAverage("userOneCrib")}
+        </div>
+        <div className="box user-two-crib-avg">
+          {this.findAverage("userTwoCrib")}
+        </div>
+        
       </div>
     );
   }
