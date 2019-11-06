@@ -5,7 +5,7 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
-  grid-gap: 0.5vw;
+  grid-gap: 2.5vw;
   background-color: rgb(41, 28, 41);
   
 }
@@ -14,7 +14,7 @@ body {
   background-color: rgb(90, 8, 241);
   color:whitesmoke;
   border-radius: 0.25vw;
-  padding: 1vw;
+  padding: 4vw;
   font-size: 2.5vw;
   text-align: center;
 }

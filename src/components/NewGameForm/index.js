@@ -182,6 +182,20 @@ export default class NewGameForm extends Component {
         <div>{/* {this.findTotal("one") / this.state.hands.length} */}</div>
         <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
         <div>{/* {this.findTotal("two") / this.state.hands.length} */}</div>
+
+        <div class="box a">A</div>
+  <div class="box b">B</div>
+  <div class="box c">C</div>
+  <div class="box d">D</div>
+  <div class="box e">E</div>
+  <div class="box f">F</div>
+    <div class="box g">G</div>
+    <div class="box h">H</div>
+    <div class="box i">I</div>
+    <div class="box j">J</div>
+    <div class="box k">K</div>
+    <div class="box l">L</div>
+
         <button
           className="next-hand-button"
           onClick={this.handleNextHandSubmit}
