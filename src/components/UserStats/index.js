@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './style.css';
 import axios from "axios";
-const backendUrl = "http://localhost3001";
+const backendUrl = "http://localhost:3001";
 export default class UserStats extends Component {
     state = {
         username: "",
-        // instead of wins and losses we need win percentage and games played
         wins: "",
         losses: "",
         playAvg: "",
@@ -13,46 +12,59 @@ export default class UserStats extends Component {
         cribAvg: "",
         skunks: "",
         skunked: "",
-        games: "",
-        url: "localhost3001",
-        // url: "git.io.danlgrigg/cribsmack"
+        games: []
     };
+
+    handleChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
 
     componentDidMount() {
 // check to see if user info is in local storage
 // if no, redirect to login, otherwise:
 // parse user object and set the state for all of the state variables
+        axios.get(backendUrl+"/api/profile", { withCredentials: true })
+            .then(data=>{
+                this.setState({
+                    username: data.data.username,
+                    wins: data.data.wins,
+                    losses: data.data.losses,
+                    playAvg: data.data.playAvg,
+                    countAvg: data.data.countAvg,
+                    cribAvg: data.data.cribAvg,
+                    skunks: data.data.skunks,
+                    skunked: data.data.skunked,
+                    games: data.data.games,
 
-        axios
-            .get(backendUrl+"/api/profile")
-            .then(data=>console.log(data))
-            .catch(err=>console.log(err))
+                })
+                // console.log("THIS IS RESPONSE",data)
+
+            }).catch(err=>console.log("THIS IS ERROR",err))
+            
 
     }
 
     render() {
         return (
             <div>
-                <h1 className="username">{this.state.username}</h1>
+                <h1 className="username">Username: {this.state.username}</h1>
                 <h2>Stats</h2>
                 <div className="wrapper">
                     <div className="box1">
-                        <p className="winPerc">{this.state.wins}</p>
-                        <br />
-                        
-                        <p className="gamesPlayed">{this.state.user}</p>
+                        <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>
+                        <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {this.state.games.length}</p>
                     </div>
                     <div className="box2">
-                        <p className="playAvg">{this.state.playAvg}</p>
-                        <br />
-                        <p className="countAvg">{this.state.countAvg}</p>
-                        <br />
-                        <p className="cribAvg">{this.state.cribAvg}</p>
+                        <p className="playAvg" onChange={this.handleChange}>Play Average: {this.state.playAvg}</p>
+                        <p className="countAvg" onChange={this.handleChange}>Count Average: {this.state.countAvg}</p>
+                        <p className="cribAvg" onChange={this.handleChange}>Crib Average: {this.state.cribAvg}</p>
                     </div>
                     <div className="box3">
-                        <p className="skunksGvn">{this.state.skunks}</p>
-                        <br />
-                        <p className="skunksRcvd">{this.state.skunked}</p>
+                        <p className="skunksGvn" onChange={this.handleChange}>Skunks Given: {this.state.skunks}</p>
+                        <p className="skunksRcvd" onChange={this.handleChange}>Skunks Recieved: {this.state.skunked}</p>
                     </div>
                 </div>
             </div>
