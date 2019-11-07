@@ -11,6 +11,7 @@ import GavelIcon from '@material-ui/icons/Gavel';
 import './style.css';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,73 +48,80 @@ export default function MenuAppBar(props) {
   //      </div>
   //   )
   // }
-// }
+  // }
+  console.log(props);
+  const classes = useStyles();
+  const [auth] = React.useState(true);
+  // const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
-const classes = useStyles();
-const [auth] = React.useState(true);
-// const [auth, setAuth] = React.useState(true);
-const [anchorEl, setAnchorEl] = React.useState(null);
-const open = Boolean(anchorEl);
+  // const handleChange = event => {
+  //   setAuth(event.target.checked);
+  // };
 
-// const handleChange = event => {
-//   setAuth(event.target.checked);
-// };
+  const handleMenu = event => {
+    setAnchorEl(event.currentTarget);
+  };
 
-const handleMenu = event => {
-  setAnchorEl(event.currentTarget);
-};
-
-const handleClose = () => {
-  setAnchorEl(null);
-};
-
-return (
-  <div className={classes.root}>
-    <AppBar position="static" className="topNav">
-      <Toolbar>
-        {/* {this.renderRedirect()} */}
-        <IconButton onClick={()=>props.handleChangePage("landingPage")} edge="start" className={classes.menuButton} color="gray" aria-label="menu">
-          <GavelIcon />
-        </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          CribSmack
-          </Typography>
-        {auth && (
-          <div>
-            <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="gray"
-            >
-              <AccountCircle />
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleSignout = event => {
+    console.log("clicked")
+    axios.get(`http://localhost:3001/auth/logout`)
+      .then(data => {
+        console.log("logged out", data)
+        props.history.push("/");
+      })
+      .catch(err => console.log(err))
+  }
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className="topNav">
+        <Toolbar>
+          {/* {this.renderRedirect()} */}
+          <Link to={"/"}>
+            <IconButton edge="start" className={classes.menuButton} color="gray" aria-label="menu">
+              <GavelIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={open}
-              onClose={handleClose}
-            >
-              <Link to={"/login"}>
-                <MenuItem>Log In</MenuItem>
-              </Link>
-              <Link to={"/createaccount"}>
-                <MenuItem>Create Account</MenuItem>
-              </Link>
-            </Menu>
-          </div>
-        )}
-      </Toolbar>
-    </AppBar>
-  </div>
-)}
+          </Link>
+          <Typography variant="h6" className={classes.title}>
+            CribSmack
+          </Typography>
+          {auth && (
+            <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="gray"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open}
+                onClose={handleClose}
+              >
+
+                <MenuItem onClick={handleSignout}>Log Out</MenuItem>
+              </Menu>
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
+    </div>
+  )
+}
