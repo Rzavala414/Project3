@@ -4,17 +4,75 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
-  grid-gap: 0.5vw;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh 6vh 6vh;
+  grid-gap: 4vw;
   background-color: rgb(41, 28, 41);
-  color: #444;
+  width: 50vw;
+  /* change scroll properties and overflow */
+}
+.input {
+  display: grid;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh 6vh 6vh;
+  grid-gap: 4vw;
+  background-color: rgb(41, 28, 41);
+  width: 50vw;
+  /* change scroll properties and overflow */
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
-  border-radius: 0.25vw;
+  background-color: rgb(90, 8, 241);
+  color: whitesmoke;
+  /* border-radius: 0.25vw;
   padding: 1vw;
-  font-size: 2.5vw;
+  font-size: 4vw; */
+  width: 16vw;
+  height: 6vh;
   text-align: center;
+  border: 1px solid wheat;
+}
+
+.buttonBoxL {
+  background-color: salmon;
+  width: 20vw;
+  z-index: 1;
+}
+.buttonBoxR {
+  background-color: #bada55;
+  width: 20vw;
+  z-index: 1;
+}
+/* .end-game-button{
+  background-color: #bada55;
+} */
+
+.Averages {
+  display: grid;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh 6vh 6vh;
+  grid-gap: 4vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 1vw;
+}
+.averages {
+  display: grid;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh 6vh 6vh;
+  grid-gap: 4vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 1vw;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 14vw 14vw;
+  grid-template-rows: 6vh;
+  grid-gap: 4vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 1vw;
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
+  }
 }
