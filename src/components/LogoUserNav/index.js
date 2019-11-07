@@ -105,7 +105,7 @@ return (
               onClose={handleClose}
             >
               <Link to={"/login"}>
-                <MenuItem>Log In</MenuItem>
+                <MenuItem>Log Out</MenuItem>
               </Link>
               <Link to={"/createaccount"}>
                 <MenuItem>Create Account</MenuItem>
