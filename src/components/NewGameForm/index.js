@@ -104,126 +104,114 @@ export default class NewGameForm extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div className="a"></div>
-        <div className="box b">{this.state.user}</div>
-        {/* <div className="box c">{this.state.user}avg</div> */}
-        <div className="box d">{this.state.user2}</div>
-        {/* <div className="box e">{this.state.user2}avg</div> */}
+          <div className="a"></div>
+          <div className="box b">{this.state.user}</div>
+         
+          <div className="box d">{this.state.user2}</div>
+         
 
-        <div className="box f">The Play</div>
-        <input
-          className="box user-one-play"
-          value={this.state.userOnePlay}
-          onChange={this.handleChange}
-          type="number"
-          name="userOnePlay"
-        ></input>
-        {/* <div className="box user-one-play-avg">{this.state.hands.reduce((total,hand)=>hand.userOnePlay+ total,0)/this.state.hands.length}</div> */}
-        {/* <div className="box user-one-play-avg" type="number" max="9999">
-          {this.findAverage("userOnePlay")}
-        </div> */}
-        <input
-          className="box user-two-play"
-          value={this.state.userTwoPlay}
-          onChange={this.handleChange}
-          type="number"
-          name="userTwoPlay"
-        ></input>
-        {/* <div className="box user-two-play-avg">
-          {this.findAverage("userTwoPlay")}
-        </div> */}
-        <div className="box f">The Count</div>
+          <div className="box f">The Play</div>
+          <input
+            className="box user-one-play"
+            value={this.state.userOnePlay}
+            onChange={this.handleChange}
+            type="number"
+            name="userOnePlay"
+          ></input>
+  
+          <input
+            className="box user-two-play"
+            value={this.state.userTwoPlay}
+            onChange={this.handleChange}
+            type="number"
+            name="userTwoPlay"
+          ></input>
+        
+          <div className="box f">The Count</div>
 
-        <input
-          className="box user-one-count"
-          onChange={this.handleChange}
-          type="number"
-          name="userOneCount"
-        ></input>
-        {/* <div className="box user-one-count-avg">
-          {this.findAverage("userOneCount")}
-        </div> */}
-        <input
-          className="box user-two-count"
-          value={this.state.userTwoCount}
-          onChange={this.handleChange}
-          type="number"
-          name="userTwoCount"
-        ></input>
-        {/* <div className="box user-two-count-avg">
-          {this.findAverage("userTwoCount")}
-        </div> */}
+          <input
+            className="box user-one-count"
+            onChange={this.handleChange}
+            type="number"
+            name="userOneCount"
+          ></input>
+     
+          <input
+            className="box user-two-count"
+            value={this.state.userTwoCount}
+            onChange={this.handleChange}
+            type="number"
+            name="userTwoCount"
+          ></input>
 
-        <div className="box f">The Crib</div>
-        <input
-          className="box user-one-crib"
-          value={this.state.userOneCrib}
-          onChange={this.handleChange}
-          type="number"
-          name="userOneCrib"
-        ></input>
-        {/* <div className="box user-one-crib-avg">
+          <div className="box f">The Crib</div>
+          <input
+            className="box user-one-crib"
+            value={this.state.userOneCrib}
+            onChange={this.handleChange}
+            type="number"
+            name="userOneCrib"
+          ></input>
+          {/* <div className="box user-one-crib-avg">
           {this.findAverage("userOneCrib")}
         </div> */}
-        <input
-          className="box user-two-crib"
-          value={this.state.userTwoCrib}
-          onChange={this.handleChange}
-          type="number"
-          name="userTwoCrib"
-        ></input>
-        {/* <div className="box user-two-crib-avg">
+          <input
+            className="box user-two-crib"
+            value={this.state.userTwoCrib}
+            onChange={this.handleChange}
+            type="number"
+            name="userTwoCrib"
+          ></input>
+          {/* <div className="box user-two-crib-avg">
           {this.findAverage("userTwoCrib")}
         </div> */}
 
-        <div className="box f">Game Score</div>
+          <div className="box f">Game Score</div>
 
-        <div className="box user-one-total-avg">{this.findTotal("one")}</div>
-        {/* <div>{this.findTotal("one") / this.state.hands.length}</div> */}
-        <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
-        {/* <div>{this.findTotal("two") / this.state.hands.length}</div> */}
+          <div className="box user-one-total-avg">{this.findTotal("one")}</div>
+          {/* <div>{this.findTotal("one") / this.state.hands.length}</div> */}
+          <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
+          {/* <div>{this.findTotal("two") / this.state.hands.length}</div> */}
 
+          <button
+            className="next-hand-button buttonBoxL"
+            onClick={this.handleNextHandSubmit}
+          >
+            Next Hand
+          </button>
+          <div className="hiddenBox"></div>
+          <button
+            className="end-game-button buttonBoxR"
+            onClick={this.handleNewGameSubmit}
+          >
+            New Game
+          </button>
 
-
-        <button
-          className="next-hand-button"
-          onClick={this.handleNextHandSubmit}
-        >
-          Next Hand
-        </button>
-        <button className="end-game-button" onClick={this.handleNewGameSubmit}>
-          New Game
-        </button>
-        <div className="box"></div>
-        
-        <div class="box a">avg</div>
-        <div class="box b">head</div>
-        <div class="box c">here</div>
-        
-        <div className="box f">The Play</div>
-        <div className="box user-one-play-avg" type="number" max="9999">
-          {this.findAverage("userOnePlay")}
+        <div className="Averages">
+        <h2>Averages</h2>
+          {/* <div className="title">Averages</div> */}
+          <div className="box f">The Play</div>
+          <div className="box user-one-play-avg" type="number" max="9999">
+            {this.findAverage("userOnePlay")}
+          </div>
+          <div className="box user-two-play-avg">
+            {this.findAverage("userTwoPlay")}
+          </div>
+          <div className="box f">The Count</div>
+          <div className="box user-one-count-avg">
+            {this.findAverage("userOneCount")}
+          </div>
+          <div className="box user-two-count-avg">
+            {this.findAverage("userTwoCount")}
+          </div>
+          <div className="box f">The Crib</div>
+          <div className="box user-one-crib-avg">
+            {this.findAverage("userOneCrib")}
+          </div>
+          <div className="box user-two-crib-avg">
+            {this.findAverage("userTwoCrib")}
+          </div>
         </div>
-        <div className="box user-two-play-avg">
-          {this.findAverage("userTwoPlay")}
-        </div>
-        
-        <div className="box f">The Count</div>
-        <div className="box user-one-count-avg">
-          {this.findAverage("userOneCount")}
-        </div>
-        <div className="box user-two-count-avg">
-          {this.findAverage("userTwoCount")}
-        </div>
-
-        <div className="box f">The Crib</div>
-        <div className="box user-one-crib-avg">
-          {this.findAverage("userOneCrib")}
-        </div>
-        <div className="box user-two-crib-avg">
-          {this.findAverage("userTwoCrib")}
-        </div>
-        
       </div>
     );
   }

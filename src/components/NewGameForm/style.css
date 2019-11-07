@@ -4,11 +4,11 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 15vw 15vw 15vw 
+  grid-template-columns: 19vw 19vw 19vw 
   ;
   grid-gap: 2.5vw;
   background-color: rgb(41, 28, 41);
-  
+  /* change scroll properties and overflow */
 }
 
 .box {
@@ -16,10 +16,45 @@ body {
   color:whitesmoke;
   border-radius: 0.25vw;
   padding: 4vw;
-  font-size: 2.5vw;
+  font-size: 4vw;
   text-align: center;
+  border:1px solid wheat;
 }
 
-.end-game-button{
+.buttonBoxL{
+  background-color:salmon;
+  width:20vw;
+  z-index: 1;
+}
+.buttonBoxR{
+  background-color:#bada55;
+  width:15vw;
+  padding-right:10rem;
+  z-index: 1;
+}
+/* .end-game-button{
   background-color: #bada55;
+} */
+
+.hiddenBox {
+  /* position: relative; */
+  z-index: inherit 0;
+  width: 1px;
+}
+
+.Averages {
+  display: grid;
+  grid-template-columns: 19vw 19vw 19vw 
+  ;
+  grid-gap: 2.5vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 10vw;
+  
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
+ position: relative;
+
+  }
 }
