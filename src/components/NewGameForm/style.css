@@ -3,73 +3,88 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  width: 100%;
+  flex-flow: wrap;
+  /* width: 100; */
+  /*
   display: grid;
   grid-template-columns: 14vw 14vw 14vw;
   grid-template-rows: 6vh 6vh 6vh;
   grid-gap: 4vw;
   background-color: rgb(41, 28, 41);
   width: 50vw;
+  */
   /* change scroll properties and overflow */
 }
 .input {
   display: grid;
   grid-template-columns: 14vw 14vw 14vw;
-  grid-template-rows: 6vh 6vh 6vh;
-  grid-gap: 4vw;
+  grid-template-rows: 6vh;
+  grid-gap: 4vw 7vw;
   background-color: rgb(41, 28, 41);
-  width: 50vw;
+  width: 95vw;
+  justify-content: center;
   /* change scroll properties and overflow */
 }
 
+.score {
+  display: grid;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh;
+  grid-gap: 4vw 7vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 3vw;
+  width: 95vw;
+  justify-content: center;
+}
+.average-title {
+  text-align: center;
+}
+.averages {
+  display: grid;
+  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-rows: 6vh 6vh 6vh;
+  grid-gap: 4vw 7vw;
+  background-color: rgb(41, 28, 41);
+  padding-top: 1vw;
+  width: 95vw;
+  justify-content: center;
+}
 .box {
   background-color: rgb(90, 8, 241);
   color: whitesmoke;
   /* border-radius: 0.25vw;
   padding: 1vw;
   font-size: 4vw; */
-  width: 16vw;
+  width: 18vw;
   height: 6vh;
   text-align: center;
   border: 1px solid wheat;
+  justify-content: center;
 }
 
 .buttonBoxL {
   background-color: salmon;
-  width: 20vw;
-  z-index: 1;
+  width: 25vw;
 }
 .buttonBoxR {
   background-color: #bada55;
-  width: 20vw;
-  z-index: 1;
+  width: 25vw;
 }
 /* .end-game-button{
   background-color: #bada55;
 } */
 
-.Averages {
-  display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
-  grid-template-rows: 6vh 6vh 6vh;
-  grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
-  padding-top: 1vw;
-}
-.averages {
-  display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
-  grid-template-rows: 6vh 6vh 6vh;
-  grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
-  padding-top: 1vw;
-}
 .buttons {
   display: grid;
-  grid-template-columns: 14vw 14vw;
+  grid-template-columns: 25vw 25vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw;
   background-color: rgb(41, 28, 41);
-  padding-top: 1vw;
+  padding-top: 5vw;
+  justify-content: center;
+  width: 100vw;
 }
 
 @media only screen and (max-width: 375px) {
