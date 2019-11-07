@@ -34,9 +34,22 @@ export default class CreateAccount extends Component {
 
                 //redirect to the dashboard
                 // this.props.history.push("/Dashboard")
-                this.handleLoginFormSubmit();
+                // this.handleLoginFormSubmit();
 
-                this.props.history.push("/Dashboard");
+                axios.post(`${this.state.url}/auth/login`, { name: this.state.name, password: this.state.password }, { withCredentials: true }).then(res => {
+                    console.log(res.data, res.status)
+                    localStorage.setItem("currentUser", JSON.stringify(res.data.user))
+                    //set localstorage (remember we can only store strings in localStorage)
+                    // this.setState({
+                    //   name:"",
+                    //   password:"",
+                    //   loggedInUser:res.data.user
+                    // });
+                    this.props.history.push("/Dashboard");
+                    // redirect on successful login
+        
+                    // this.getAllManatees();
+                })
                 
             }).catch(err => {
                 console.log(err.response);
@@ -55,7 +68,6 @@ export default class CreateAccount extends Component {
                     <input placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
                     <input type="submit" onClick={this.handleSignupFormSubmit} />
                 </form>
-                <button onClick={this.readSessions}>Readsessions</button>
             </div>
         )
     }

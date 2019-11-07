@@ -39,6 +39,6 @@
     justify-content: center;
     border-color: gray;
     padding-top: 80px;
-    height: 100vh;
+    padding-bottom: 80px;
     background:rgb(41, 28, 41);
 }
