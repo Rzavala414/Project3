@@ -6,13 +6,14 @@ body {
   display: flex;
   width: 100%;
   flex-flow: wrap;
+  border: 1px solid black;
   /* width: 100; */
   /*
   display: grid;
   grid-template-columns: 14vw 14vw 14vw;
   grid-template-rows: 6vh 6vh 6vh;
   grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   width: 50vw;
   */
   /* change scroll properties and overflow */
@@ -22,7 +23,7 @@ body {
   grid-template-columns: 14vw 14vw 14vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   width: 95vw;
   justify-content: center;
   /* change scroll properties and overflow */
@@ -33,7 +34,7 @@ body {
   grid-template-columns: 14vw 14vw 14vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   padding-top: 3vw;
   width: 95vw;
   justify-content: center;
@@ -46,7 +47,7 @@ body {
   grid-template-columns: 14vw 14vw 14vw;
   grid-template-rows: 6vh 6vh 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   padding-top: 1vw;
   width: 95vw;
   justify-content: center;
@@ -81,7 +82,7 @@ body {
   grid-template-columns: 25vw 25vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   padding-top: 5vw;
   justify-content: center;
   width: 100vw;

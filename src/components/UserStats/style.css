@@ -1,9 +1,22 @@
+.userprofile_wrapper {
+    display:flex;
+    flex-direction: column;
+}
+
 .box1 {
-    color: rgb(205, 183, 255);
+    color: #1A237E;
 }
 .box2 {
-    color: rgb(205, 183, 255);
+    color:#1A237E;
 }
 .box3{
-    color: rgb(205, 183, 255);
+    color:#1A237E;
 }
+
+body {
+    color:#1A237E;
+}
+
+/* *{
+    border: 1px solid black
+} */

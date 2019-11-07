@@ -52,7 +52,8 @@ export default class UserStats extends Component {
             <div>
                 <h1 className="username">Username: {this.state.username}</h1>
                 <h2>Stats</h2>
-                <div className="wrapper">
+                <div className="userprofile_wrapper">
+                    
                     <div className="box1">
                         <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>
                         <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {this.state.games.length}</p>
