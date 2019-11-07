@@ -13,7 +13,7 @@ export default class LoginForm extends Component {
   //   this.readSessions();
   //   this.getAllManatees();
   // }
-
+  }
   handleChange= event=>{
     const {name,value}=event.target;
     this.setState({

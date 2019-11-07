@@ -142,7 +142,7 @@ export default class GameCard extends Component {
       total += parseInt(hand[property]);
       console.log("hand",hand[property]);
     });
-    return total / this.state.hands.length;
+    return (total / this.state.hands.length).toFixed(2);
   };
 
   findTotal = user => {
@@ -179,11 +179,12 @@ export default class GameCard extends Component {
     //TODO: Set user 1 and user 2 to state????
     return (
       <div className="wrapper">
+        <div className="input">
         <div className="a"></div>
-        <div className="box b">{this.state.userOne}</div>
-        <div className="box c">{this.state.userOne} Averages</div>
-        <div className="box d">{this.state.userTwo}</div>
-        <div className="box e">{this.state.userTwo} Averages</div>
+        <div className="box b">{this.state.user}</div>
+        {/* <div className="box c">{this.state.user}avg</div> */}
+        <div className="box d">{this.state.user2}</div>
+        {/* <div className="box e">{this.state.user2}avg</div> */}
 
         <div className="box f">The Play</div>
         <input
@@ -194,9 +195,9 @@ export default class GameCard extends Component {
           name="userOnePlay"
         ></input>
         {/* <div className="box user-one-play-avg">{this.state.hands.reduce((total,hand)=>hand.userOnePlay+ total,0)/this.state.hands.length}</div> */}
-        <div className="box user-one-play-avg" type="number" max="9999">
+        {/* <div className="box user-one-play-avg" type="number" max="9999">
           {this.findAverage("userOnePlay")}
-        </div>
+        </div> */}
         <input
           className="box user-two-play"
           value={this.state.userTwoPlay}
@@ -204,21 +205,20 @@ export default class GameCard extends Component {
           type="number"
           name="userTwoPlay"
         ></input>
-        <div className="box user-two-play-avg">
+        {/* <div className="box user-two-play-avg">
           {this.findAverage("userTwoPlay")}
-        </div>
+        </div> */}
         <div className="box f">The Count</div>
 
         <input
           className="box user-one-count"
-          value={this.state.userOneCount}
           onChange={this.handleChange}
           type="number"
           name="userOneCount"
         ></input>
-        <div className="box user-one-count-avg">
+        {/* <div className="box user-one-count-avg">
           {this.findAverage("userOneCount")}
-        </div>
+        </div> */}
         <input
           className="box user-two-count"
           value={this.state.userTwoCount}
@@ -226,9 +226,9 @@ export default class GameCard extends Component {
           type="number"
           name="userTwoCount"
         ></input>
-        <div className="box user-two-count-avg">
+        {/* <div className="box user-two-count-avg">
           {this.findAverage("userTwoCount")}
-        </div>
+        </div> */}
 
         <div className="box f">The Crib</div>
         <input
@@ -238,9 +238,9 @@ export default class GameCard extends Component {
           type="number"
           name="userOneCrib"
         ></input>
-        <div className="box user-one-crib-avg">
+        {/* <div className="box user-one-crib-avg">
           {this.findAverage("userOneCrib")}
-        </div>
+        </div> */}
         <input
           className="box user-two-crib"
           value={this.state.userTwoCrib}
@@ -248,9 +248,10 @@ export default class GameCard extends Component {
           type="number"
           name="userTwoCrib"
         ></input>
-        <div className="box user-two-crib-avg">
-          {this.findAverage("userTwoCrib")}
         </div>
+        {/* <div className="box user-two-crib-avg">
+          {this.findAverage("userTwoCrib")}
+        </div> */}
 
         <div className="box f">Game Score</div>
 
@@ -259,7 +260,7 @@ export default class GameCard extends Component {
         <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
         <div>{/* {this.findTotal("two") / this.state.hands.length} */}</div>
         <button
-          className="next-hand-button"
+          className="next-hand-button buttonBoxL"
           onClick={this.handleNextHandSubmit}
         >
           Next Hand
