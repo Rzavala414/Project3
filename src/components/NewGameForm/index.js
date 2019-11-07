@@ -11,7 +11,10 @@ import Grid from "@material-ui/core/Grid";
 export default class GameCard extends Component {
   //TODO: Figure out how to place 1 session user in gamecard, add dropdown for 2nd user to bring in session
   state = {
-    userOne: "",
+    userOne: {
+        id:"",
+        name:""
+    },
     userTwo: "",
     userOnePlay: 0,
     userOneCount: 0,
@@ -101,15 +104,24 @@ export default class GameCard extends Component {
       //User Axios call
     axios
       .post(`${this.state.url}api/user`, {
-        userOne: {
-          userOneWin: this.state.userOneWin,
+        user: {
+          win: this.state.userOneWin,
           userOneLoss: this.state.userOneLoss,
           userOnePlayAverage: this.findAverage("userOnePlay"),
           userOneCountAverage: this.findAverage("userOneCount"),
           userOneCribAverage: this.findAverage("userOneCrib")
-        },
+        }
+      })
+      .then(function(response) {
+        console.log("User Response", response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+      axios
+      .post(`${this.state.url}api/user`, {
         userTwo: {
-          userTwoWin: this.state.userTwoWin,
+          win: this.state.userTwoWin,
           userTwoLoss: this.state.userTwoLoss,
           userTwoPlayAverage: this.findAverage("userTwoPlay"),
           userTwoCountAverage: this.findAverage("userTwoCount"),
