@@ -4,9 +4,7 @@ const backendUrl = "http://localhost:3001";
 
 export default class GlobalStatsTable extends Component {
     state = {
-        username: "",
-        wins: "",
-        losses: "",
+        wins: ""
     };
 
     handleChange = event => {
@@ -18,10 +16,13 @@ export default class GlobalStatsTable extends Component {
 
     componentDidMount() {
 
-            axios.get(backendUrl+"/api/leaderboard-wins-percetage", { withCredentials: true })
+            axios.get(backendUrl+"/api/leaderboard-win-percentage", { withCredentials: true })
             .then(data=>{
+                // this.setState({
+                //     wins: this.data.data[0].wins
+                // })
 
-                console.log("THIS IS RESPONSE",data)
+                console.log("THIS IS RESPONSE",data.data)
 
             }).catch(err=>console.log("THIS IS ERROR",err))
         
@@ -32,16 +33,16 @@ export default class GlobalStatsTable extends Component {
             <div>
                    <table>
                        <tr>
-                           <th>Rank</th>
+                           {/* <th>Rank</th> */}
                            <th>Username</th>
                            <th>Wins</th>
-                           <th>Skunks</th>
+                           {/* <th>Skunks</th> */}
                        </tr>
                        <tr>
-                           <td onChange={this.handleChange}>{this.state.rank}</td>
-                           <td onChange={this.handleChange}>{this.state.username}</td>
-                           <td onChange={this.handleChange}>{this.state.wins}</td>
-                           <td onChange={this.handleChange}>{this.state.losses}</td>
+                           {/* <td onChange={this.handleChange}>{this.state.rank}</td> */}
+                           <td>{this.state.username}</td>
+                           <td>{this.state.wins}</td>
+                           {/* <td onChange={this.handleChange}>{this.state.losses}</td> */}
                        </tr>
                    </table>
             </div>
