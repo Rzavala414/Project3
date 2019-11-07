@@ -12,7 +12,7 @@ export default class UserStats extends Component {
         cribAvg: "",
         skunks: "",
         skunked: "",
-        games: [],
+        games: []
     };
 
     handleChange = event => {
@@ -40,8 +40,7 @@ export default class UserStats extends Component {
                     games: data.data.games,
 
                 })
-                console.log("games"+data.data.games.length)
-                console.log("THIS IS RESPONSE",data)
+                // console.log("THIS IS RESPONSE",data)
 
             }).catch(err=>console.log("THIS IS ERROR",err))
             
