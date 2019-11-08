@@ -36,9 +36,9 @@ body {
 
 .input {
   display: grid;
-  grid-template-columns: 30vw 24vw 24vw;
+  grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 6vh;
-  grid-gap: 4vw 7vw;
+  grid-gap: 4vw 5vw;
   background-color:  rgba(64, 98, 187, 1);
   width: 95vw;
   justify-content: center;
@@ -48,11 +48,11 @@ body {
 
 .score {
   display: grid;
-  grid-template-columns: 30vw 24vw 24vw;
+  grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 6vh;
-  grid-gap: 4vw 7vw;
+  grid-gap: 4vw 5vw;
   background-color:  rgba(64, 98, 187, 1);
-  padding-top: 3vw;
+  padding-top: 1vw;
   padding-bottom: 3vw;
   width: 95vw;
   justify-content: center;
@@ -62,9 +62,9 @@ body {
 }
 .averages {
   display: grid;
-  grid-template-columns: 30vw 24vw 24vw;
+  grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 6vh 6vh 6vh;
-  grid-gap: 4vw 7vw;
+  grid-gap: 4vw 5vw;
   background-color:   rgba(64, 98, 187, 1);
   padding-top: 1vw;
   width: 95vw;
@@ -85,13 +85,20 @@ body {
   /* box-shadow: 3px 3px 5px 6px; */
 }
 
+.number {
+  font-size: 1.30rem;
+}
+.label {
+  font-size: 1.25rem
+}
+
 .buttonBoxL {
   background-color:rgba(89, 195, 195, 1);
-  width: 25vw;
+  width: 34vw;
 }
 .buttonBoxR {
   background-color: rgba(89, 195, 195, 1);
-  width: 25vw;
+  width: 34vw;
 }
 /* .end-game-button{
   background-color: #bada55;

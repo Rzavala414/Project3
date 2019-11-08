@@ -182,13 +182,13 @@ export default class GameCard extends Component {
        {/* <div className="component-wrapper"> */}
         <div className="input">
           <div className="a"></div>
-          <div className="box b">{this.state.user}</div>
+          <div className="box b number">{this.state.user}</div>
           
-          <div className="box d">{this.state.user2}</div>
+          <div className="box d number">{this.state.user2}</div>
 
-          <div className="box f">The Play</div>
+          <div className="box f label">The Play</div>
           <input
-            className="box user-one-play"
+            className="box user-one-play number"
             value={this.state.userOnePlay}
             onChange={this.handleChange}
             type="number"
@@ -196,33 +196,33 @@ export default class GameCard extends Component {
           ></input>
       
           <input
-            className="box user-two-play"
+            className="box user-two-play number"
             value={this.state.userTwoPlay}
             onChange={this.handleChange}
             type="number"
             name="userTwoPlay"
           ></input>
         
-          <div className="box f">The Count</div>
+          <div className="box f label">The Count</div>
 
           <input
-            className="box user-one-count"
+            className="box user-one-count number"
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
           ></input>
        
           <input
-            className="box user-two-count"
+            className="box user-two-count number"
             value={this.state.userTwoCount}
             onChange={this.handleChange}
             type="number"
             name="userTwoCount"
           ></input>
 
-          <div className="box f">The Crib</div>
+          <div className="box f label">The Crib</div>
           <input
-            className="box user-one-crib"
+            className="box user-one-crib number"
             value={this.state.userOneCrib}
             onChange={this.handleChange}
             type="number"
@@ -230,7 +230,7 @@ export default class GameCard extends Component {
           ></input>
       
           <input
-            className="box user-two-crib"
+            className="box user-two-crib number"
             value={this.state.userTwoCrib}
             onChange={this.handleChange}
             type="number"
@@ -239,7 +239,7 @@ export default class GameCard extends Component {
         </div>
      
         <div className="score">
-          <div className="box f">Game Score</div>
+          <div className="box f label">Game Score</div>
 
           <div className="box user-one-total-avg"
           >{this.findTotal("one")}</div>
@@ -251,14 +251,14 @@ export default class GameCard extends Component {
 
         <div className="buttons">
           <button
-            className="next-hand-button buttonBoxL"
+            className="next-hand-button buttonBoxL label"
             onClick={this.handleNextHandSubmit}
           >
             Next Hand
           </button>
 
           <button
-            className="end-game-button buttonBoxR"
+            className="end-game-button buttonBoxR label"
             onClick={this.handleNewGameSubmit}
           >
             New Game
@@ -268,25 +268,25 @@ export default class GameCard extends Component {
         <div className="average-wrapper">
           <div className="average-title">Average</div>
           <div className="averages">
-            <div className="box f">The Play</div>
-            <div className="box user-one-play-avg" type="number" max="9999">
+            <div className="box f label">The Play</div>
+            <div className="box user-one-play-avg number" type="number" max="9999">
               {this.findAverage("userOnePlay")}
             </div>
-            <div className="box user-two-play-avg">
+            <div className="box user-two-play-avg number">
               {this.findAverage("userTwoPlay")}
             </div>
-            <div className="box f">The Count</div>
-            <div className="box user-one-count-avg">
+            <div className="box f label">The Count</div>
+            <div className="box user-one-count-avg number">
               {this.findAverage("userOneCount")}
             </div>
-            <div className="box user-two-count-avg">
+            <div className="box user-two-count-avg number">
               {this.findAverage("userTwoCount")}
             </div>
-            <div className="box f">The Crib</div>
-            <div className="box user-one-crib-avg">
+            <div className="box f label">The Crib</div>
+            <div className="box user-one-crib-avg number">
               {this.findAverage("userOneCrib")}
             </div>
-            <div className="box user-two-crib-avg">
+            <div className="box user-two-crib-avg number">
               {this.findAverage("userTwoCrib")}
             </div>
           </div>
