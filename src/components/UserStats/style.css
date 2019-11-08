@@ -1,21 +1,13 @@
 .userprofile_wrapper {
     display:flex;
     flex-direction: column;
+    color:black;
 }
 
-.box1 {
+.box {
     color: #1A237E;
 }
-.box2 {
-    color:#1A237E;
-}
-.box3{
-    color:#1A237E;
-}
 
-body {
-    color:#1A237E;
-}
 
 /* *{
     border: 1px solid black
