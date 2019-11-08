@@ -7,7 +7,7 @@ export default class NewGamePage extends Component {
     render() {
         return (
             <div>
-                <h1 style={{border:"1px solid white"}}>GameBoard</h1>
+                <h1 className="game-board">GameBoard</h1>
               <NewGameForm/>
             </div>
         )
