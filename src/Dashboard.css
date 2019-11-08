@@ -34,10 +34,9 @@
 .currentPage {
     max-width: auto;
     max-height: auto;
-    color: rgba(64, 98, 187, 1);
     display: flex;
     justify-content: center;
     padding-top: 80px;
     height: 100vh;
-    background: rgba(235, 235, 235, 1);
+    background-color: rgba(64, 98, 187, 1);
 }
