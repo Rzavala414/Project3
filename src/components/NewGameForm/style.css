@@ -18,6 +18,23 @@ body {
   */
   /* change scroll properties and overflow */
 }
+/* .component-wrapper {
+  display: flex;
+  width: 90vw;
+  flex-flow: wrap;
+  border: 1px solid black;
+  justify-content:center;
+} */
+
+  component-wrapper {
+    display: flex;
+    width: 100vw;
+    flex-flow: wrap;
+    padding-right: 21px;
+    border: 1px solid black;
+    justify-content: center;
+}
+
 .input {
   display: grid;
   grid-template-columns: 17vw 17vw 17vw;
@@ -35,7 +52,7 @@ body {
   grid-template-columns: 17vw 17vw 17vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 7vw;
-  background-color:#B3E5FC;
+  background-color:#263238;
   padding-top: 3vw;
   padding-bottom: 3vw;
   width: 95vw;

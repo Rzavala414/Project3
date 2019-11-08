@@ -179,6 +179,7 @@ export default class GameCard extends Component {
     //TODO: Set user 1 and user 2 to state????
     return (
       <div className="wrapper">
+       <div className="component-wrapper">
         <div className="input">
           <div className="a"></div>
           <div className="box b">{this.state.user}</div>
@@ -303,6 +304,7 @@ export default class GameCard extends Component {
             <div className="box user-two-crib-avg">
               {this.findAverage("userTwoCrib")}
             </div>
+          </div>
           </div>
         </div>
       </div>
