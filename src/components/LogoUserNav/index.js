@@ -27,38 +27,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuAppBar(props) {
 
-  // state = {
-  //   redirect: false
-  // }
-  // setRedirect = () => {
-  //   this.setState({
-  //     redirect: true
-  //   })
-  // }
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to='/' />
-  //   }
-  // }
-  // render () {
-  //   return (
-  //      <div>
-  //       {this.renderRedirect()}
-  //       <button onClick={this.setRedirect}>Redirect</button>
-  //      </div>
-  //   )
-  // }
-  // }
   console.log(props);
   const classes = useStyles();
   const [auth] = React.useState(true);
   // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
-  // const handleChange = event => {
-  //   setAuth(event.target.checked);
-  // };
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -80,15 +54,11 @@ export default function MenuAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" className="topNav">
         <Toolbar>
-          {/* {this.renderRedirect()} */}
           <Link to={"/"}>
-            <IconButton edge="start" className={classes.menuButton} color="gray" aria-label="menu">
-              <GavelIcon />
-            </IconButton>
-          </Link>
-          <Typography variant="h6" className={classes.title}>
-            CribSmack
+            <Typography variant="h6" className={classes.title}>
+              CribSmack
           </Typography>
+          </Link>
           {auth && (
             <div>
               <IconButton

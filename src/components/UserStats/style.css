@@ -3,13 +3,16 @@
     flex-direction: column;
     color:black;
 }
-
+.username{
+    color:rgba(64, 98, 187, 1);
+    text-shadow: black 0.05em 0.05em 0.1em;
+    font-family: 'Permanent Marker', cursive;
+}
 .box {
     color: #1A237E;
 }
 
 .box3{
-    color: rgb(205, 183, 255);
 }
 
 .wrapper{
