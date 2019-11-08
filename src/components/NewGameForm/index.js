@@ -34,7 +34,12 @@ export default class GameCard extends Component {
   };
 
   componentDidMount(){
-    //axios call to grab session user and set to state
+    axios.get(`${this.state.url}auth/readsessions`,{withCredentials:true}).then(data=>{
+        console.log(data.data)
+        this.setState({
+            userOne:data.data.user
+        })
+    })
   }
 
   handleChange = event => {
@@ -70,8 +75,7 @@ export default class GameCard extends Component {
         `${this.state.url}api/gamecard`,
         {
           //TODO: what do we set
-          userOne: this.state.userOne,
-          userTwo: this.state.userTwo,
+          userTwo: this.state.userTwo.id,
           userOnePlay: this.state.userOnePlay,
           userOneCount: this.state.userOneCount,
           userOneCrib: this.state.userOneCrib,
@@ -91,7 +95,7 @@ export default class GameCard extends Component {
           userTwoCountAverage: this.findAverage("userTwoCount"),
           userTwoCribAverage: this.findAverage("userTwoCrib"),
           hands: []
-        }
+        },{withCredentials:true}
         //TODO: Separate post for users??
       )
       .then(function(response) {
@@ -185,7 +189,7 @@ export default class GameCard extends Component {
         let newState;
         // console.log(this.state)
         newState = response.data.map(el => {
-          return el.username;
+          return {name:el.username,id:el._id};
         });
         console.log(newState);
         this.setState({ users: newState });
@@ -212,25 +216,25 @@ export default class GameCard extends Component {
           <form>
             <select
               onChange={event => {
-                console.log(event.target.value);
+                console.log(event.target.options[event.target.options.selectedIndex].text);
                 this.setState({
-                  userTwo: event.target.value,
+                  userTwo: {id:event.target.value,name:event.target.options[event.target.options.selectedIndex].text},
                   users: [],
                   buttonHidden:true
                 });
               }}
             >
               {this.state.users.map((el, i) => {
-                return <option key={i}>{el}</option>;
+                return <option key={el.id} value={el.id}>{el.name}</option>;
               })}
             </select>
           </form>
         </div>
         <div className="input">
           <div className=""></div>
-          <div className="user-one">{this.state.userOne}</div>
+          <div className="user-one">{this.state.userOne.name}</div>
           {/* <div className="box c">{this.state.user}avg</div> */}
-          <div className=" user-two">{this.state.userTwo}</div>
+          <div className=" user-two">{this.state.userTwo.name}</div>
           {/* <div className="box e">{this.state.user2}avg</div> */}
 
           <div className="box play-header">The Play</div>
