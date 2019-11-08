@@ -37,6 +37,7 @@ export default function IconTabs(props) {
       >
         <Tab onClick={()=>props.handleChangePage("userPage")} icon={<PersonIcon />} aria-label="person" />
         <Tab onClick={()=>props.handleChangePage("newGame")} icon={<PlayArrowIcon />} aria-label="newGame" />
+        {/* <Tab onClick={()=>props.handleChangePage("newGame")} icon={<PlayArrowIcon />} aria-label="newGame" /> */}
         <Tab onClick={()=>props.handleChangePage("leaderboard")} icon={<EmojiEventsIcon />} aria-label="trophy" />
         <Tab onClick={()=>props.handleChangePage("rulesNScoring")} icon={<GavelIcon />} aria-label="gavel" />
       </Tabs>

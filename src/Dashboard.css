@@ -34,11 +34,9 @@
 .currentPage {
     max-width: auto;
     max-height: auto;
-    color: white;
     display: flex;
     justify-content: center;
-    border-color: gray;
     padding-top: 80px;
-    padding-bottom:100px;
+    padding-bottom:200px;
     background:#B3E5FC;
 }
