@@ -12,6 +12,10 @@
     font-size: 2rem;
     text-shadow: black 0.1em 0.1em 0.2em;
 }
+#root > div > div > div.topNav > div > header > div{
+    display: flex;
+    justify-content: space-between;
+}
 path{
     color: rgba(235, 235, 235, 1);
 }
