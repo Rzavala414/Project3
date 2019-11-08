@@ -53,9 +53,9 @@ export default class UserStats extends Component {
         // let gamesPlayed = this.state.games.length>0 ? this.state.games.length : 0
         return (
             <div>
-                <h1 className="username">Username: {this.state.username}</h1>
-                <h2>Stats</h2>
-                <div className="wrapper">
+                <h1 className="username">Hello {this.state.username}!</h1>
+                <h2 className="">Your Stats</h2>
+                <div className="userprofile_wrapper">
                     <div className="box1">
                         <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>
                         <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {0}</p>

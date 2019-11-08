@@ -1,4 +1,17 @@
 .topNav{
-    background-color: rgb(67, 7, 102) !important;
+    background-color: rgba(3, 64, 120, 1) !important;
     height: 50px;
+    font-family: 'Permanent Marker', cursive !important;
+}
+#root > div > div > div.topNav > div > header > div > a > h6{
+    color: rgba(244, 91, 105, 1);
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 500;
+    line-height: 5;
+    letter-spacing: 0.0075em;
+    font-size: 2rem;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+path{
+    color: rgba(235, 235, 235, 1);
 }

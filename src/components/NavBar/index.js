@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -8,7 +9,6 @@ import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 import PersonIcon from '@material-ui/icons/Person';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import GavelIcon from '@material-ui/icons/Gavel';
-import './style.css';
 
 const useStyles = makeStyles({
   root: {
@@ -37,6 +37,7 @@ export default function IconTabs(props) {
       >
         <Tab onClick={()=>props.handleChangePage("userPage")} icon={<PersonIcon />} aria-label="person" />
         <Tab onClick={()=>props.handleChangePage("newGame")} icon={<PlayArrowIcon />} aria-label="newGame" />
+        {/* <Tab onClick={()=>props.handleChangePage("newGame")} icon={<PlayArrowIcon />} aria-label="newGame" /> */}
         <Tab onClick={()=>props.handleChangePage("leaderboard")} icon={<EmojiEventsIcon />} aria-label="trophy" />
         <Tab onClick={()=>props.handleChangePage("rulesNScoring")} icon={<GavelIcon />} aria-label="gavel" />
       </Tabs>
