@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from "axios";
+import './style.css';
 
 export default class LandingPage extends Component {
     state = {
@@ -18,11 +19,11 @@ export default class LandingPage extends Component {
     }
     render() {
         return (
-            <div>
-            <h1>This is LandingPage</h1>
-                {this.renderRedirect()}
-                <button onClick={this.setRedirect}>Get Started</button>
-            </div>
+                <div className="openingDiv">
+                    <h1 className="cribSmack">CribSmack</h1>
+                    {this.renderRedirect()}
+                    <button className="getStrtdButton" onClick={this.setRedirect}>Get Started</button>
+                </div>
         )
     }
 };

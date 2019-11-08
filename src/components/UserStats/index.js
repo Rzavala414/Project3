@@ -50,8 +50,8 @@ export default class UserStats extends Component {
     render() {
         return (
             <div>
-                <h1 className="username">Username: {this.state.username}</h1>
-                <h2>Stats</h2>
+                <h1 className="username">Hello {this.state.username}!</h1>
+                <h2 className="">Your Stats</h2>
                 <div className="userprofile_wrapper">
                     <div className="box1">
                         <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>

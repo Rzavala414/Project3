@@ -1,0 +1,35 @@
+
+.openingDiv {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(64, 98, 187, 1);
+}
+
+.cribSmack {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+    color: rgba(244, 91, 105, 1);
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.getStrtdButton {
+    width:20%;
+    min-width: 200px;
+    margin-top: 10rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
+    background: rgba(89, 195, 195, 1);
+    color:rgba(235, 235, 235, 1);
+}
+
+.colors {
+    color1: rgba(82, 72, 156, 1);
+    color2: rgba(64, 98, 187, 1);
+    color3: rgba(89, 195, 195, 1);
+    color4: rgba(235, 235, 235, 1);
+    color5: rgba(244, 91, 105, 1);
+}
