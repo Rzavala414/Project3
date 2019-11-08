@@ -28,6 +28,7 @@ export default class UserStats extends Component {
 // parse user object and set the state for all of the state variables
         axios.get(backendUrl+"/api/profile", { withCredentials: true })
             .then(data=>{
+                console.log(data)
                 this.setState({
                     username: data.data.username,
                     wins: data.data.wins,
@@ -48,6 +49,8 @@ export default class UserStats extends Component {
     }
 
     render() {
+        console.log(this.state.games)
+        // let gamesPlayed = this.state.games.length>0 ? this.state.games.length : 0
         return (
             <div>
                 <h1 className="username">Username: {this.state.username}</h1>
@@ -55,7 +58,7 @@ export default class UserStats extends Component {
                 <div className="wrapper">
                     <div className="box1">
                         <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>
-                        <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {this.state.games.length}</p>
+                        <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {0}</p>
                     </div>
                     <div className="box2">
                         <p className="playAvg" onChange={this.handleChange}>Play Average: {this.state.playAvg}</p>
