@@ -7,6 +7,7 @@ body {
   width: 100vw;
   flex-flow: wrap;
   background-color:   rgba(64, 98, 187, 1);
+  padding-left: 8px;
   /* width: 100; */
   /*
   display: grid;
@@ -49,7 +50,7 @@ body {
 .score {
   display: grid;
   grid-template-columns: 28vw 23vw 23vw;
-  grid-template-rows: 6vh;
+  grid-template-rows: 4vh;
   grid-gap: 4vw 5vw;
   background-color:  rgba(64, 98, 187, 1);
   padding-top: 1vw;
@@ -58,21 +59,28 @@ body {
   justify-content: center;
 }
 .average-title {
-  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+    font-size: 2.25rem;
+    color: rgba(235, 235, 235, 1);
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+    margin-top:1rem;
 }
 .averages {
   display: grid;
   grid-template-columns: 28vw 23vw 23vw;
-  grid-template-rows: 6vh 6vh 6vh;
+  grid-template-rows: 5vh 5vh 5vh;
   grid-gap: 4vw 5vw;
   background-color:   rgba(64, 98, 187, 1);
-  padding-top: 1vw;
+  padding-top: 7vw;
   width: 95vw;
   justify-content: center;
 }
 .box {
-  background-color:  rgba(89, 195, 195, 1);
+  background-color:  rgba(3, 64, 120, 1);
   color:  rgba(82, 72, 156, 1);
+  border-radius:.5rem;
+  box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
   
   /* border-radius: 0.25vw;
   padding: 1vw;
@@ -87,18 +95,29 @@ body {
 
 .number {
   font-size: 1.30rem;
+  color:rgba(89, 195, 195, 1);
 }
 .label {
-  font-size: 1.25rem
+  font-size: 1.25rem;
+  color:rgba(235, 235, 235, 1);
 }
 
 .buttonBoxL {
-  background-color:rgba(89, 195, 195, 1);
-  width: 34vw;
+  background-color:rgba(244, 91, 105, 1);
+  height:4rem;
+  width: 8rem;
+  margin-left:-1.5rem;
+  border-radius:.5rem;
+  box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
+
 }
 .buttonBoxR {
-  background-color: rgba(89, 195, 195, 1);
-  width: 34vw;
+  background-color: rgba(244, 91, 105, 1);
+  height:4rem;
+  width: 8rem;
+  border-radius:.5rem;
+  box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
+
 }
 /* .end-game-button{
   background-color: #bada55;
