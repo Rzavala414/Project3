@@ -239,7 +239,7 @@ export default class GameCard extends Component {
         </div>
      
         <div className="score">
-          <div className="box f label">Game Score</div>
+          <div className="box f label">Total</div>
 
           <div className="box user-one-total-avg"
           >{this.findTotal("one")}</div>
