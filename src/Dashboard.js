@@ -17,6 +17,7 @@ class Dashboard extends Component {
         this.setState({ page });
     }
     render() {
+        console.log(this.props);
         let currentPage;
         if (this.state.page === "userPage") {
             currentPage = <UserHomeProfile />
@@ -39,7 +40,7 @@ class Dashboard extends Component {
         return (
             <div className="dashboardComponents">
                 <div className="topNav">
-                    <LogoUserNav handleChangePage={this.setCurrentPage} />
+                    <LogoUserNav history={this.props.history} handleChangePage={this.setCurrentPage} />
                 </div>
                 <div className="currentPageParent">
                     <div className="currentPage">
