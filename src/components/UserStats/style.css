@@ -1,9 +1,13 @@
-.box1 {
-    color: rgb(205, 183, 255);
+.userprofile_wrapper {
+    display:flex;
+    flex-direction: column;
+    color:black;
 }
-.box2 {
-    color: rgb(205, 183, 255);
+
+.box {
+    color: #1A237E;
 }
+
 .box3{
     color: rgb(205, 183, 255);
 }

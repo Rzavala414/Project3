@@ -179,6 +179,7 @@ export default class GameCard extends Component {
     //TODO: Set user 1 and user 2 to state????
     return (
       <div className="wrapper">
+       <div className="component-wrapper">
         <div className="input">
           <div className="a"></div>
           <div className="box b">{this.state.user}</div>
@@ -255,10 +256,12 @@ export default class GameCard extends Component {
         <div className="score">
           <div className="box f">Game Score</div>
 
-          <div className="box user-one-total-avg">{this.findTotal("one")}</div>
-          {/* <div>{this.findTotal("one") / this.state.hands.length}</div> */}
-          <div className="box user-two-total-avg"> {this.findTotal("two")}</div>
-          {/* <div>{this.findTotal("two") / this.state.hands.length}</div> */}
+          <div className="box user-one-total-avg"
+          >{this.findTotal("one")}</div>
+        
+          <div className="box user-two-total-avg"
+          >{this.findTotal("two")}</div>
+        
         </div>
 
         <div className="buttons">
@@ -280,7 +283,6 @@ export default class GameCard extends Component {
         <div className="average-wrapper">
           <div className="average-title">Average</div>
           <div className="averages">
-            {/* <div className="title">Averages</div> */}
             <div className="box f">The Play</div>
             <div className="box user-one-play-avg" type="number" max="9999">
               {this.findAverage("userOnePlay")}
@@ -302,6 +304,7 @@ export default class GameCard extends Component {
             <div className="box user-two-crib-avg">
               {this.findAverage("userTwoCrib")}
             </div>
+          </div>
           </div>
         </div>
       </div>

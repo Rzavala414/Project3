@@ -4,37 +4,57 @@ body {
 
 .wrapper {
   display: flex;
-  width: 100%;
+  width: 100vw;
   flex-flow: wrap;
+  border: 1px solid black;
   /* width: 100; */
   /*
   display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-columns: 17vw 14vw 14vw;
   grid-template-rows: 6vh 6vh 6vh;
   grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   width: 50vw;
   */
   /* change scroll properties and overflow */
 }
+/* .component-wrapper {
+  display: flex;
+  width: 90vw;
+  flex-flow: wrap;
+  border: 1px solid black;
+  justify-content:center;
+} */
+
+  component-wrapper {
+    display: flex;
+    width: 100vw;
+    flex-flow: wrap;
+    padding-right: 21px;
+    border: 1px solid black;
+    justify-content: center;
+}
+
 .input {
   display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-columns: 17vw 17vw 17vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   width: 95vw;
   justify-content: center;
+  padding-bottom: 3vw;
   /* change scroll properties and overflow */
 }
 
 .score {
   display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-columns: 17vw 17vw 17vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#263238;
   padding-top: 3vw;
+  padding-bottom: 3vw;
   width: 95vw;
   justify-content: center;
 }
@@ -43,25 +63,26 @@ body {
 }
 .averages {
   display: grid;
-  grid-template-columns: 14vw 14vw 14vw;
+  grid-template-columns: 17vw 17vw 17vw;
   grid-template-rows: 6vh 6vh 6vh;
   grid-gap: 4vw 7vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   padding-top: 1vw;
   width: 95vw;
   justify-content: center;
 }
 .box {
-  background-color: rgb(90, 8, 241);
-  color: whitesmoke;
+  background-color: #546E7A;
+  color:black;
   /* border-radius: 0.25vw;
   padding: 1vw;
   font-size: 4vw; */
-  width: 18vw;
+  width: 22vw;
   height: 6vh;
   text-align: center;
   border: 1px solid wheat;
   justify-content: center;
+  box-shadow: 3px 3px 5px 6px;
 }
 
 .buttonBoxL {
@@ -81,7 +102,7 @@ body {
   grid-template-columns: 25vw 25vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw;
-  background-color: rgb(41, 28, 41);
+  background-color:#B3E5FC;
   padding-top: 5vw;
   justify-content: center;
   width: 100vw;
