@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import "./style.css";
 const backendUrl = "http://localhost:3001";
-
 export default class GlobalStatsTable extends Component {
     state = {
         wins: "",
@@ -9,8 +9,7 @@ export default class GlobalStatsTable extends Component {
         countAvg: "",
         cribAvg: "",
         skunks: ""
-    };
-
+    };  
 
     componentDidMount() {
 
