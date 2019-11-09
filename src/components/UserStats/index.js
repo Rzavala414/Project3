@@ -50,7 +50,7 @@ export default class UserStats extends Component {
 
     render() {
         console.log(this.state.games)
-        // let gamesPlayed = this.state.games.length>0 ? this.state.games.length : 0
+        
         return (
             <div>
                 <h1 className="username">{this.state.username}</h1>
