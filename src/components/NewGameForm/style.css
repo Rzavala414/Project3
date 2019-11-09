@@ -6,33 +6,16 @@ body {
   display: flex;
   width: 100vw;
   flex-flow: wrap;
-  background-color:   rgba(64, 98, 187, 1);
+  background-color: rgba(64, 98, 187, 1);
   padding-left: 8px;
-  /* width: 100; */
-  /*
-  display: grid;
-  grid-template-columns: 21vw 14vw 14vw;
-  grid-template-rows: 6vh 6vh 6vh;
-  grid-gap: 4vw;
-  background-color:#B3E5FC;
-  width: 50vw;
-  */
-  /* change scroll properties and overflow */
 }
-/* .component-wrapper {
-  display: flex;
-  width: 90vw;
-  flex-flow: wrap;
-  border: 1px solid black;
-  justify-content:center;
-} */
 
-  component-wrapper {
-    display: flex;
-    width: 100vw;
-    flex-flow: wrap;
-    padding-right: 21px;
-    justify-content: center;
+component-wrapper {
+  display: flex;
+  width: 100vw;
+  flex-flow: wrap;
+  padding-right: 21px;
+  justify-content: center;
 }
 
 .input {
@@ -40,7 +23,7 @@ body {
   grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw 5vw;
-  background-color:  rgba(64, 98, 187, 1);
+  background-color: rgba(64, 98, 187, 1);
   width: 95vw;
   justify-content: center;
   padding-bottom: 3vw;
@@ -52,83 +35,76 @@ body {
   grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 4vh;
   grid-gap: 4vw 5vw;
-  background-color:  rgba(64, 98, 187, 1);
+  background-color: rgba(64, 98, 187, 1);
   padding-top: 1vw;
   padding-bottom: 3vw;
   width: 95vw;
   justify-content: center;
 }
+
 .average-title {
-  font-family: 'Permanent Marker', cursive;
-    font-size: 2.25rem;
-    color: rgba(235, 235, 235, 1);
-    text-shadow: black 0.1em 0.1em 0.2em;
-    text-align: center;
-    margin-top:1rem;
+  font-family: "Permanent Marker", cursive;
+  font-size: 2.25rem;
+  color: rgba(235, 235, 235, 1);
+  text-shadow: black 0.1em 0.1em 0.2em;
+  text-align: center;
+  margin-top: 1rem;
 }
+
 .averages {
   display: grid;
   grid-template-columns: 28vw 23vw 23vw;
   grid-template-rows: 5vh 5vh 5vh;
   grid-gap: 4vw 5vw;
-  background-color:   rgba(64, 98, 187, 1);
+  background-color: rgba(64, 98, 187, 1);
   padding-top: 7vw;
   width: 95vw;
   justify-content: center;
 }
+
 .box {
-  background-color:  rgba(3, 64, 120, 1);
-  color:  rgba(82, 72, 156, 1);
-  border-radius:.5rem;
+  background-color: rgba(3, 64, 120, 1);
+  color: rgba(82, 72, 156, 1);
+  border-radius: 0.5rem;
   box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
-  
-  /* border-radius: 0.25vw;
-  padding: 1vw;
-  font-size: 4vw; */
-  /* width: 22vw; */
-  /* height: 6vh; */
   text-align: center;
   border: 1px solid wheat;
   justify-content: center;
-  /* box-shadow: 3px 3px 5px 6px; */
 }
 
 .number {
-  font-size: 1.30rem;
-  color:rgba(89, 195, 195, 1);
+  font-size: 1.3rem;
+  color: rgba(89, 195, 195, 1);
 }
+
 .label {
   font-size: 1.25rem;
-  color:rgba(235, 235, 235, 1);
+  color: rgba(235, 235, 235, 1);
 }
 
 .buttonBoxL {
-  background-color:rgba(244, 91, 105, 1);
-  height:4rem;
+  background-color: rgba(244, 91, 105, 1);
+  height: 4rem;
   width: 8rem;
-  margin-left:-1.5rem;
-  border-radius:.5rem;
+  margin-left: -1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
-
 }
+
 .buttonBoxR {
   background-color: rgba(244, 91, 105, 1);
-  height:4rem;
+  height: 4rem;
   width: 8rem;
-  border-radius:.5rem;
+  border-radius: 0.5rem;
   box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
-
 }
-/* .end-game-button{
-  background-color: #bada55;
-} */
 
 .buttons {
   display: grid;
   grid-template-columns: 25vw 25vw;
   grid-template-rows: 6vh;
   grid-gap: 4vw;
-  background-color:  rgba(64, 98, 187, 1);
+  background-color: rgba(64, 98, 187, 1);
   padding-top: 5vw;
   justify-content: center;
   width: 100vw;
