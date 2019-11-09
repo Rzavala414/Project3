@@ -37,6 +37,6 @@
     display: flex;
     justify-content: center;
     padding-top: 80px;
-    height: 100vh;
-    background-color: rgba(64, 98, 187, 1);
+    padding-bottom:200px;
+    background:rgba(64, 98, 187, 1)
 }

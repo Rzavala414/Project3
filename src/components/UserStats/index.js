@@ -53,21 +53,21 @@ export default class UserStats extends Component {
         // let gamesPlayed = this.state.games.length>0 ? this.state.games.length : 0
         return (
             <div>
-                <h1 className="username">Hello {this.state.username}!</h1>
-                <h2 className="">Your Stats</h2>
+                <h1 className="username">{this.state.username}</h1>
+                <h2 className="stats">Your Stats</h2>
                 <div className="userprofile_wrapper">
                     <div className="box1">
-                        <p className="winPerc" onChange={this.handleChange}>Win Percentage: {this.state.wins}</p>
-                        <p className="gamesPlayed" onChange={this.handleChange}>Games Played: {0}</p>
+                        <p className="winPerc" onChange={this.handleChange}>Win Percentage: <span className="scoretext">{this.state.wins}</span></p>
+                        <p className="gamesPlayed" onChange={this.handleChange}>Games Played: <span className="scoretext">{this.state.games.length}</span></p>
                     </div>
                     <div className="box2">
-                        <p className="playAvg" onChange={this.handleChange}>Play Average: {this.state.playAvg}</p>
-                        <p className="countAvg" onChange={this.handleChange}>Count Average: {this.state.countAvg}</p>
-                        <p className="cribAvg" onChange={this.handleChange}>Crib Average: {this.state.cribAvg}</p>
+                        <p className="playAvg" onChange={this.handleChange}>Play Average: <span className="scoretext">{this.state.playAvg}</span></p>
+                        <p className="countAvg" onChange={this.handleChange}>Count Average: <span className="scoretext">{this.state.countAvg}</span></p>
+                        <p className="cribAvg" onChange={this.handleChange}>Crib Average: <span className="scoretext">{this.state.cribAvg}</span></p>
                     </div>
                     <div className="box3">
-                        <p className="skunksGvn" onChange={this.handleChange}>Skunks Given: {this.state.skunks}</p>
-                        <p className="skunksRcvd" onChange={this.handleChange}>Skunks Recieved: {this.state.skunked}</p>
+                        <p className="skunksGvn" onChange={this.handleChange}>Skunks Given: <span className="scoretext">{this.state.skunks}</span></p>
+                        <p className="skunksRcvd" onChange={this.handleChange}>Skunks Recieved: <span className="scoretext">{this.state.skunked}</span></p>
                     </div>
                 </div>
             </div>

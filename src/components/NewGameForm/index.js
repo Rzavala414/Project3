@@ -292,9 +292,20 @@ export default class GameCard extends Component {
         </div>
      
         <div className="score">
+<<<<<<< HEAD
           <div className="box game-score-label">Game Score</div>
           <div className="box user-one-total">{this.findTotal("one")}</div>
           <div className="box user-two-total"> {this.findTotal("two")}</div>
+=======
+          <div className="box f label">Total</div>
+
+          <div className="box user-one-total-avg"
+          >{this.findTotal("one")}</div>
+        
+          <div className="box user-two-total-avg"
+          >{this.findTotal("two")}</div>
+        
+>>>>>>> 3cb84b5ed13fc398ba853b2e9d326201fef831b0
         </div>
 
         <div className="buttons">
