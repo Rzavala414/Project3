@@ -30,8 +30,8 @@ export default class GameCard extends Component {
     userTwoLoss: 0,
     hands: [],
 
-    url: "https://cribsmack-be.herokuapp.com/"
-    //TODO: url:"http://github.io.rzavalia....."
+    url: "http://localhost:3001/"
+    // url: "https://cribsmack-be.herokuapp.com/"
   };
 
   // componentDidMount(){
