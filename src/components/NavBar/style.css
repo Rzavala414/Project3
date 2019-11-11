@@ -1,0 +1,7 @@
+.tabsBar {
+    background-color: rgba(3, 64, 120, 1) !important;
+}
+#root > div > div > div.navbar{
+    padding: 0;
+    box-shadow: -5px -5px -26px -5px rgba(0, 0, 0, 0.247);
+}

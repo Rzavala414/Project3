@@ -1,0 +1,31 @@
+
+.title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.25rem;
+    color: rgba(235, 235, 235, 1);
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+}
+.fixed-height-container {
+    display: flex;
+    flex-wrap: center;
+    flex-direction: column;
+    height:70vh;
+    width:80vw;
+    margin-top: .5rem;
+    color: rgba(235, 235, 235, 1);
+    background-color: rgba(3, 64, 120, 1);
+    /* text-align:middle; */
+    /* justify-self: center; */
+    box-shadow: .1rem .1rem 1rem .2rem  rgba(0, 0, 0, 0.247);
+    border-radius: .7rem;
+}
+
+.rules {
+    height: 70vh;
+    width:72vw;
+    overflow: auto;
+    padding-left: 1.75rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

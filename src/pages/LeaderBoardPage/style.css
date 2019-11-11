@@ -1,0 +1,8 @@
+h1{
+    color:rgba(235, 235, 235, 1);
+    font-family: 'Permanent Marker', cursive;
+}
+
+.width{
+    min-width:300px;
+}
