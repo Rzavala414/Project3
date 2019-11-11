@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 // import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 
 export default class GameCard extends Component {
   //TODO: Figure out how to place 1 session user in gamecard, add dropdown for 2nd user to bring in session
@@ -179,7 +174,6 @@ export default class GameCard extends Component {
     //TODO: Set user 1 and user 2 to state????
     return (
       <div className="wrapper">
-       {/* <div className="component-wrapper"> */}
         <div className="input">
           <div className="a"></div>
           <div className="box b number">{this.state.user}</div>
@@ -228,7 +222,6 @@ export default class GameCard extends Component {
             type="number"
             name="userOneCrib"
           ></input>
-      
           <input
             className="box user-two-crib number"
             value={this.state.userTwoCrib}
@@ -243,25 +236,21 @@ export default class GameCard extends Component {
 
           <div className="box user-one-total-avg"
           >{this.findTotal("one")}</div>
-        
+
           <div className="box user-two-total-avg"
           >{this.findTotal("two")}</div>
-        
         </div>
 
         <div className="buttons">
           <button
             className="next-hand-button buttonBoxL label"
-            onClick={this.handleNextHandSubmit}
-          >
+            onClick={this.handleNextHandSubmit}>
             Next Hand
           </button>
-
           <button
             className="end-game-button buttonBoxR label"
-            onClick={this.handleNewGameSubmit}
-          >
-            New Game
+            onClick={this.handleNewGameSubmit}>
+            End Game
           </button>
         </div>
 
