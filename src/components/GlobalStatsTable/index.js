@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "./style.css";
-const backendUrl = "http://localhost:3001";
+const backendUrl = " https://cribsmack-be.herokuapp.com";
 export default class GlobalStatsTable extends Component {
     state = {
         wins: "",
