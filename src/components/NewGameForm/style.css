@@ -1,5 +1,6 @@
 body {
   margin: 5rem;
+  color: skyblue;
 }
 
 .wrapper {
@@ -19,6 +20,15 @@ body {
   justify-content: center;
 }
 
+.user-two-select {
+  background-color:rgba(244, 91, 105, 1);
+  height:4rem;
+  width: 8rem;
+  margin-left: 0rem;
+  border-radius:.5rem;
+  
+  
+}
 .input {
   display: grid;
   grid-template-columns: 28vw 23vw 23vw;
