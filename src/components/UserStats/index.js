@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
 import axios from "axios";
-const backendUrl = "https://cribsmack-be.herokuapp.com";
+const backendUrl = "http://localhost:3001";
+// const backendUrl = "https://cribsmack-be.herokuapp.com";
 export default class UserStats extends Component {
   state = {
     username: "",
