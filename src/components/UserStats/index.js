@@ -57,7 +57,7 @@ export default class UserStats extends Component {
                 <h2 className="stats">Your Stats</h2>
                 <div className="userprofile_wrapper">
                     <div className="box1">
-                        <p className="winPerc" onChange={this.handleChange}>Win Percentage: <span className="scoretext">{this.state.wins}</span></p>
+                        <p className="winPerc" onChange={this.handleChange}>Win Percentage: <span className="scoretext">{this.state.games.length / this.state.wins}</span></p>
                         <p className="gamesPlayed" onChange={this.handleChange}>Games Played: <span className="scoretext">{this.state.games.length}</span></p>
                     </div>
                     <div className="box2">
