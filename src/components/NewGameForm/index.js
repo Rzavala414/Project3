@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 // import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 
 export default class GameCard extends Component {
   //TODO: Figure out how to place 1 session user in gamecard, add dropdown for 2nd user to bring in session
@@ -36,7 +31,7 @@ export default class GameCard extends Component {
     responseTwo: null,
     responseThree: null,
 
-    url: "http://localhost:3001/"
+    url: "https://cribsmack-be.herokuapp.com/"
     //TODO: url:"http://github.io.rzavalia....."
   };
 
@@ -366,11 +361,9 @@ export default class GameCard extends Component {
         <div className="buttons">
           <button
             className="next-hand-button buttonBoxL label"
-            onClick={this.handleNextHandSubmit}
-          >
+            onClick={this.handleNextHandSubmit}>
             Next Hand
           </button>
-
           <button
             className="end-game-button buttonBoxR label"
             onClick={this.handleNewGameSubmit}

@@ -8,7 +8,7 @@ export default class LoginPage extends Component {
         name: "",
         password: "",
 
-        url: "http://localhost:3001",
+        url: "https://cribsmack-be.herokuapp.com",
     };
 
     handleChange = event => {
