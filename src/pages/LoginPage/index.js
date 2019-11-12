@@ -59,14 +59,14 @@ export default class LoginPage extends Component {
                 
                 <div className="container">
                 <form>
-                    <input className= "input-fields" placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
+                    <input className= "input-user" placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
+                    {/* <br></br>
+                    <br></br> */}
+                    <input className= "input-password" placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
                     <br></br>
-                    <br></br>
-                    <input className= "input-fields" placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
-                    <br></br>
-                    <button className="button" type="submit" onClick={this.handleLoginFormSubmit} >Submit</button>
+                    <button className= "button" type="submit" onClick={this.handleLoginFormSubmit} >Submit</button>
+                <Link className="sign-up" to="/createaccount">Sign up</Link>
                 </form>
-                <Link className="sign-up" to="/createaccount">Sign up!</Link>
                 </div>
             </div>
         )
