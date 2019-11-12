@@ -32,9 +32,8 @@ export default class GameCard extends Component {
     responseThree: null,
 
     url: "https://cribsmack-be.herokuapp.com/"
-    //TODO: url:"http://github.io.rzavalia....."
-  };
-
+    // url: "https://localhost:3001"
+  }
   componentDidMount() {
     axios
       .get(`${this.state.url}auth/readsessions`, { withCredentials: true })

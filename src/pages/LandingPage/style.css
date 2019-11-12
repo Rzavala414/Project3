@@ -33,3 +33,7 @@
     color4: rgba(235, 235, 235, 1);
     color5: rgba(244, 91, 105, 1);
 }
+
+.landing-caption {
+    margin-top: 5rem;
+}

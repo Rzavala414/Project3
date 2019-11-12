@@ -7,6 +7,7 @@ export default class LoginForm extends Component {
     password:"",
  
     url:"https://cribsmack-be.herokuapp.com",
+    // url:"localhost:3001",
     //TODO: add github URL
 
   // componentDidMount(){
@@ -23,6 +24,7 @@ export default class LoginForm extends Component {
 
 
   handleLoginFormSubmit = event=>{
+      console.log("URL:", this.state.url)
     if(event){
 
       event.preventDefault();
