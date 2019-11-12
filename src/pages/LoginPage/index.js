@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import axios from "axios";
 import LogoUserNav from "../../components/LogoUserNav";
 import {Link,Redirect} from "react-router-dom";
+import "./style.css";
 
 export default class LoginPage extends Component {
     state = {
         name: "",
         password: "",
 
+        // url: "http://localhost:3001",
         url: "https://cribsmack-be.herokuapp.com",
     };
 
@@ -52,15 +54,21 @@ export default class LoginPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className= "create-account">
                 <LogoUserNav />
                 <h3>Login</h3>
+                
+                <div className="container">
                 <form>
-                    <input placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
-                    <input placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
-                    <button type="submit" onClick={this.handleLoginFormSubmit} >Submit</button>
+                    <input className= "input-user" placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
+                    {/* <br></br>
+                    <br></br> */}
+                    <input className= "input-password" placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
+                    <br></br>
+                    <button className= "button" type="submit" onClick={this.handleLoginFormSubmit} >Submit</button>
+                <Link className="sign-up" to="/createaccount">Sign up</Link>
                 </form>
-                <Link to="/createaccount">Sign up!</Link>
+                </div>
             </div>
         )
     }

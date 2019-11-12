@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import LogoUserNav from "../../components/LogoUserNav";
+import "./style.css";
 
 export default class CreateAccount extends Component {
     state = {
@@ -8,7 +9,8 @@ export default class CreateAccount extends Component {
         password: "",
         loggedInUser: "",
         email: "",
-        url:"https://cribsmack-be.herokuapp.com",
+        // url:"http://localhost:3001",
+        url:" https://cribsmack-be.herokuapp.com/ ",
     }
     // componentDidMount(){
     //   this.readSessions();
@@ -26,7 +28,8 @@ export default class CreateAccount extends Component {
 
     handleSignupFormSubmit = event => {
         event.preventDefault();
-        axios.post('https://cribsmack-be.herokuapp.com/auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
+        // axios.post('http://localhost:3001/auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
+        axios.post(' https://cribsmack-be.herokuapp.com/ /auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
             .then(res => {
                 console.log(res.data, res.status)
 
@@ -62,12 +65,17 @@ export default class CreateAccount extends Component {
             <div>
                 <LogoUserNav/>
                 <h3>Signup</h3>
+               <div className="container">
                 <form>
-                    <input placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
-                    <input placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
-                    <input placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
-                    <input type="submit" onClick={this.handleSignupFormSubmit} />
+                    <input className= "input-user" placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
+                    <br></br>
+                    <input className= "input-password" placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
+                   <br></br>
+                    <input className= "input-email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
+                    <br></br>
+                    <input className= "button" type="submit" onClick={this.handleSignupFormSubmit} />
                 </form>
+                </div>
             </div>
         )
     }
