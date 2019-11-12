@@ -1,0 +1,27 @@
+.container {
+    display:flex;
+    justify-content: center;
+}
+
+.input-user {
+    /* border: 1px solid black; */
+    border-radius: .30rem;
+    margin-bottom: .5rem
+}
+.input-password {
+    /* border: 1px solid black; */
+    border-radius: .30rem;
+    margin-bottom: .5rem
+}
+.input-email {
+    /* border: 1px solid black; */
+    border-radius: .30rem;
+    margin-bottom: .5rem
+}
+.button {
+    background: rgba(89, 195, 195, 1);
+    border-radius: .5rem;
+    box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
+    margin-top: 1rem;
+
+}

@@ -85,7 +85,15 @@ export default class GameCard extends Component {
     let newStateHands = this.state.hands;
     newStateHands.push(newHand);
     console.log(newStateHands);
+    this.findTotal("one")
+    console.log(this.state.userOneTotal)
     this.setState({
+    userOnePlay: 0,
+    userOneCount: 0,
+    userOneCrib: 0,
+    userTwoPlay: 0,
+    userTwoCount: 0,
+    userTwoCrib: 0,
       hands: newStateHands
     });
     //TODO: Alternate Cribs so non-crib doesn't equal zero
@@ -301,14 +309,14 @@ export default class GameCard extends Component {
           <div className="box play-header">The Play</div>
           <input
             className="box user-one-play number"
-            value={this.state.userOnePlay}
+            placeholder={this.state.userOnePlay}
             onChange={this.handleChange}
             type="number"
             name="userOnePlay"
           ></input>
           <input
             className="box user-two-play number"
-            value={this.state.userTwoPlay}
+            placeholder={this.state.userTwoPlay}
             onChange={this.handleChange}
             type="number"
             name="userTwoPlay"
@@ -317,13 +325,15 @@ export default class GameCard extends Component {
           <div className="box count-header">The Count</div>
           <input
             className="box user-one-count number"
+            placeholder={this.state.userOneCount}
+
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
           ></input>
           <input
             className="box user-two-count number"
-            value={this.state.userTwoCount}
+            placeholder={this.state.userTwoCount}
             onChange={this.handleChange}
             type="number"
             name="userTwoCount"
@@ -332,25 +342,27 @@ export default class GameCard extends Component {
           <div className="box crib-header">The Crib</div>
           <input
             className="box user-one-crib number"
-            value={this.state.userOneCrib}
+            placeholder={this.state.userOneCrib}
             onChange={this.handleChange}
             type="number"
             name="userOneCrib"
           ></input>
           <input
             className="box user-two-crib number"
-            value={this.state.userTwoCrib}
+            placeholder={this.state.userTwoCrib}
             onChange={this.handleChange}
             type="number"
             name="userTwoCrib"
           ></input>
         </div>
 
+
         <div className="score hand-score">
           <div className="box hand-score-label">Hand Score</div>
           <div className="box user-one-hand">{this.findHandScore("one")}</div>
           <div className="box user-two-hand"> {this.findHandScore("two")}</div>
         </div>
+
 
         <div className="score game-score">
           <div className="box game-score-label">Game Score</div>
