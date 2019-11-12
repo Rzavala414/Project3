@@ -5,8 +5,8 @@ export default class LoginForm extends Component {
   state = {
     name:"",
     password:"",
-    url:"http://localhost:3001",
-    // url:"https://cribsmack-be.herokuapp.com",
+    // url:"http://localhost:3001",
+    url:"https://cribsmack-be.herokuapp.com",
     //TODO: add github URL
 
   // componentDidMount(){
