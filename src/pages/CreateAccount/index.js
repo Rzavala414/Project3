@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import LogoUserNav from "../../components/LogoUserNav";
+import "./style.css"
 
 export default class CreateAccount extends Component {
     state = {
@@ -64,8 +65,11 @@ export default class CreateAccount extends Component {
                 <h3>Signup</h3>
                 <form>
                     <input placeholder="Username" name="name" value={this.state.name} onChange={this.handleChange} />
+                    <br></br>
                     <input placeholder="Password" name="password" value={this.state.password} type="password" onChange={this.handleChange} />
+                   <br></br>
                     <input placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
+                    <br></br>
                     <input type="submit" onClick={this.handleSignupFormSubmit} />
                 </form>
             </div>

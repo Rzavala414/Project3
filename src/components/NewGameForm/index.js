@@ -52,6 +52,12 @@ export default class GameCard extends Component {
     newStateHands.push(newHand);
     console.log(newStateHands);
     this.setState({
+    userOnePlay: 0,
+    userOneCount: 0,
+    userOneCrib: 0,
+    userTwoPlay: 0,
+    userTwoCount: 0,
+    userTwoCrib: 0,
       hands: newStateHands
     });
     //TODO: Alternate Cribs so non-crib doesn't equal zero
@@ -201,6 +207,7 @@ export default class GameCard extends Component {
 
           <input
             className="box user-one-count number"
+            value={this.state.userOneCount}
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
