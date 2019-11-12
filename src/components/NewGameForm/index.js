@@ -32,7 +32,7 @@ export default class GameCard extends Component {
     responseThree: null,
 
     // url: "http://localhost:3001/"
-    url: "https://cribsmack-be.herokuapp.com/"
+    url: "https://cribsmack-be.herokuapp.com"
   };
 
   componentDidMount() {
