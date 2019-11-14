@@ -1,3 +1,4 @@
+
 ## CribSmack
 ---
 After thirty-plus years of keeping score of Cribbage matches on notepads and excel spreadsheets, our fearless leader Dan Grigg decided enough was enough. He conceptualized a better way to score of cribbage matches and track statistics that was user friendly and relevant for the current generation. Our group created a mobile-first MERN app that accompanies offline game-play of cribbage that dynamically updates averages and leaderboards.
@@ -46,3 +47,4 @@ Thank you for the Game of Cribbage and Dan Grigg's brother for the inspiration.
 ---
 
 ### Copyright &copy CribSmack 2019
+>>>>>>> 623868c42c21d42852104179a2bb6d9522d866c2

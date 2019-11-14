@@ -381,7 +381,7 @@ export default class GameCard extends Component {
         </div>
 
         <div className="average-wrapper">
-          <div className="average-header">Averages</div>
+          <div className="average-title">Averages</div>
           <div className="averages">
             <div className="box play-avg-label">The Play</div>
             <div className="box user-one-play-avg" type="number">
