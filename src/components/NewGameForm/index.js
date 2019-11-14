@@ -31,15 +31,15 @@ export default class GameCard extends Component {
     responseTwo: null,
     responseThree: null,
 
-    // url: "http://localhost:3001/"
-    url: "https://cribsmack-be.herokuapp.com"
+    url: "http://localhost:3001/"
+    // url: "https://cribsmack-be.herokuapp.com"
   };
 
   componentDidMount() {
     axios
       .get(`${this.state.url}auth/readsessions`, { withCredentials: true })
       .then(data => {
-        console.log(data.data);
+        console.log("read sessions:", data.data);
         this.setState({
           userOne: data.data.user
         });
@@ -61,7 +61,7 @@ export default class GameCard extends Component {
     axios
       .get(`${this.state.url}api/user`)
       .then(response => {
-        console.log("response", response.data);
+        console.log("challengers", response.data);
         let newState;
         // console.log(this.state)
         newState = response.data.map(el => {
@@ -85,15 +85,15 @@ export default class GameCard extends Component {
     let newStateHands = this.state.hands;
     newStateHands.push(newHand);
     console.log(newStateHands);
-    this.findTotal("one")
-    console.log(this.state.userOneTotal)
+    this.findTotal("one");
+    console.log(this.state.userOneTotal);
     this.setState({
-    userOnePlay: 0,
-    userOneCount: 0,
-    userOneCrib: 0,
-    userTwoPlay: 0,
-    userTwoCount: 0,
-    userTwoCrib: 0,
+      userOnePlay: 0,
+      userOneCount: 0,
+      userOneCrib: 0,
+      userTwoPlay: 0,
+      userTwoCount: 0,
+      userTwoCrib: 0,
       hands: newStateHands
     });
     //TODO: Alternate Cribs so non-crib doesn't equal zero
@@ -200,7 +200,7 @@ export default class GameCard extends Component {
 
   findGameScore = user => {
     let total = 0;
-    console.log(total)
+    console.log(total);
 
     this.state.hands.forEach(hand => {
       if (user === "one") {
@@ -224,14 +224,14 @@ export default class GameCard extends Component {
     this.state.hands.forEach(hand => {
       if (user === "one") {
         total +=
-        parseInt(hand["userOneCount"]) +
-        parseInt(hand["userOneCrib"]) +
-        parseInt(hand["userOnePlay"]);
+          parseInt(hand["userOneCount"]) +
+          parseInt(hand["userOneCrib"]) +
+          parseInt(hand["userOnePlay"]);
       } else if (user === "two") {
         total +=
-        parseInt(hand["userTwoCount"]) +
-        parseInt(hand["userTwoCrib"]) +
-        parseInt(hand["userTwoPlay"]);
+          parseInt(hand["userTwoCount"]) +
+          parseInt(hand["userTwoCrib"]) +
+          parseInt(hand["userTwoPlay"]);
       }
     });
     return total;
@@ -260,10 +260,8 @@ export default class GameCard extends Component {
       this.state.userOneSkunked++;
     }
   };
-  
 
   render() {
-   
     return (
       <div className="wrapper">
         <div className="user-two-populate">
@@ -326,7 +324,6 @@ export default class GameCard extends Component {
           <input
             className="box user-one-count number"
             placeholder={this.state.userOneCount}
-
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
@@ -356,13 +353,11 @@ export default class GameCard extends Component {
           ></input>
         </div>
 
-
         <div className="score hand-score">
           <div className="box hand-score-label">Hand Score</div>
           <div className="box user-one-hand">{this.findHandScore("one")}</div>
           <div className="box user-two-hand"> {this.findHandScore("two")}</div>
         </div>
-
 
         <div className="score game-score">
           <div className="box game-score-label">Game Score</div>
@@ -373,7 +368,8 @@ export default class GameCard extends Component {
         <div className="buttons">
           <button
             className="next-hand-button buttonBoxL label"
-            onClick={this.handleNextHandSubmit}>
+            onClick={this.handleNextHandSubmit}
+          >
             Next Hand
           </button>
           <button

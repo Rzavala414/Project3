@@ -3,14 +3,15 @@ import axios from "axios";
 import LogoUserNav from "../../components/LogoUserNav";
 import {Link,Redirect} from "react-router-dom";
 import "./style.css";
-//any old comment
+
 export default class LoginPage extends Component {
     state = {
         name: "",
         password: "",
-
-        // url:"http://localhost:3001",
-        url: "https://cribsmack-be.herokuapp.com",
+        //Testing URL
+        url:"http://localhost:3001",
+        //Deployed URL
+        // url: "https://cribsmack-be.herokuapp.com",
     };
 
     handleChange = event => {
@@ -26,20 +27,10 @@ export default class LoginPage extends Component {
 
             event.preventDefault();
         }
-        // change route to match backend
         axios.post(`${this.state.url}/auth/login`, { name: this.state.name, password: this.state.password }, { withCredentials: true }).then(res => {
             console.log(res.data, res.status)
             localStorage.setItem("currentUser", JSON.stringify(res.data.user))
-            //set localstorage (remember we can only store strings in localStorage)
-            // this.setState({
-            //   name:"",
-            //   password:"",
-            //   loggedInUser:res.data.user
-            // });
             this.props.history.push("/Dashboard");
-            // redirect on successful login
-
-            // this.getAllManatees();
         }).catch(err => {
             console.log(err.response);
             this.setState({

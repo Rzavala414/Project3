@@ -43,8 +43,8 @@ export default function MenuAppBar(props) {
   };
   const handleSignout = event => {
     console.log("clicked")
-    // axios.get(`http://localhost:3001/auth/logout`)
-    axios.get(`https://cribsmack-be.herokuapp.com/auth/logout`)
+    axios.get(`http://localhost:3001/auth/logout`)
+    // axios.get(`https://cribsmack-be.herokuapp.com/auth/logout`)
       .then(data => {
         console.log("logged out", data)
         props.history.push("/");
