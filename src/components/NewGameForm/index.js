@@ -85,7 +85,7 @@ export default class GameCard extends Component {
     let newStateHands = this.state.hands;
     newStateHands.push(newHand);
     console.log(newStateHands);
-    this.findTotal("one")
+    this.findGameScore("one")
     console.log(this.state.userOneTotal)
     this.setState({
     userOnePlay: 0,
@@ -309,6 +309,7 @@ export default class GameCard extends Component {
           <div className="box play-header">The Play</div>
           <input
             className="box user-one-play number"
+            value={this.state.userOnePlay}
             placeholder={this.state.userOnePlay}
             onChange={this.handleChange}
             type="number"
@@ -317,6 +318,7 @@ export default class GameCard extends Component {
           <input
             className="box user-two-play number"
             placeholder={this.state.userTwoPlay}
+            value={this.state.userTwoPlay}
             onChange={this.handleChange}
             type="number"
             name="userTwoPlay"
@@ -326,7 +328,7 @@ export default class GameCard extends Component {
           <input
             className="box user-one-count number"
             placeholder={this.state.userOneCount}
-
+            value={this.state.userOneCount}
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
@@ -334,6 +336,7 @@ export default class GameCard extends Component {
           <input
             className="box user-two-count number"
             placeholder={this.state.userTwoCount}
+            value={this.state.userTwoCount}
             onChange={this.handleChange}
             type="number"
             name="userTwoCount"
@@ -343,6 +346,7 @@ export default class GameCard extends Component {
           <input
             className="box user-one-crib number"
             placeholder={this.state.userOneCrib}
+            value={this.state.userOneCrib}
             onChange={this.handleChange}
             type="number"
             name="userOneCrib"
@@ -350,6 +354,7 @@ export default class GameCard extends Component {
           <input
             className="box user-two-crib number"
             placeholder={this.state.userTwoCrib}
+            value={this.state.userTwoCrib}
             onChange={this.handleChange}
             type="number"
             name="userTwoCrib"
