@@ -57,7 +57,7 @@ export default class GameCard extends Component {
     if (event) {
       event.preventDefault();
     }
-    console.log(this.state.url);
+    
     axios
       .get(`${this.state.url}api/user`)
       .then(response => {
@@ -67,9 +67,9 @@ export default class GameCard extends Component {
         newState = response.data.map(el => {
           return { name: el.username, id: el._id };
         });
-        console.log(newState);
+        console.log("newState", newState);
         this.setState({ users: newState });
-        console.log(this.state);
+        console.log("setState", this.state);
       })
       .catch(function(error) {
         console.log(error);
