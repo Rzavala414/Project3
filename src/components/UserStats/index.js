@@ -51,8 +51,8 @@ export default class UserStats extends Component {
 
     return (
       <div>
-        <h1 className="username">{this.state.username}</h1>
-        <h2 className="stats">Your Stats</h2>
+        <h1 className="stats">Welcome Back: <span id="highlightName">{this.state.username}</span></h1>
+        <h2 className="stats">Here Are Today's Stats</h2>
         <div className="userprofile_wrapper">
           <div className="box1">
             <p className="winPerc" onChange={this.handleChange}>

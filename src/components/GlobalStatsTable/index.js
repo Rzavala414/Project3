@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "./style.css";
-const backendUrl = "http://localhost:3001";
-// const backendUrl = " https://cribsmack-be.herokuapp.com";
+// const backendUrl = "http://localhost:3001";
+const backendUrl = " https://cribsmack-be.herokuapp.com";
 export default class GlobalStatsTable extends Component {
     state = {
         wins: "",
@@ -57,7 +57,7 @@ export default class GlobalStatsTable extends Component {
                         <tr>
                             <th>Rank</th>
                             <th>Username</th>
-                            <th onClick={() => alert('hacked')}>Wins</th>
+                            <th>Wins</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -96,11 +96,9 @@ export default class GlobalStatsTable extends Component {
                 <table>
                     <thead>
                         <tr>
-                            {/* <th>Rank</th> */}
                             <th>Rank</th>
                             <th>Username</th>
                             <th>Count Average</th>
-                            {/* <th>Skunks</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -118,11 +116,9 @@ export default class GlobalStatsTable extends Component {
                 <table>
                     <thead>
                         <tr>
-                            {/* <th>Rank</th> */}
                             <th>Rank</th>
                             <th>Username</th>
                             <th>Crib Average</th>
-                            {/* <th>Skunks</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -140,11 +136,9 @@ export default class GlobalStatsTable extends Component {
                 <table>
                     <thead>
                         <tr>
-                            {/* <th>Rank</th> */}
                             <th>Rank</th>
                             <th>Username</th>
                             <th>Skunks</th>
-                            {/* <th>Skunks</th> */}
                         </tr>
                     </thead>
                     <tbody>
