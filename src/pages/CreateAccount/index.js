@@ -9,8 +9,13 @@ export default class CreateAccount extends Component {
         password: "",
         loggedInUser: "",
         email: "",
+<<<<<<< HEAD
         url:"http://localhost:3001",
         // url:"https://cribsmack-be.herokuapp.com",
+=======
+        // url:"http://localhost:3001",
+        url:" https://cribsmack-be.herokuapp.com/ ",
+>>>>>>> efeb202194296d51f708c8499f57575528c4f2b9
     }
     // componentDidMount(){
     //   this.readSessions();
@@ -28,8 +33,13 @@ export default class CreateAccount extends Component {
 
     handleSignupFormSubmit = event => {
         event.preventDefault();
+<<<<<<< HEAD
         axios.post('http://localhost:3001/auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
         // axios.post(' https://cribsmack-be.herokuapp.com/auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
+=======
+        // axios.post('http://localhost:3001/auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
+        axios.post(' https://cribsmack-be.herokuapp.com/ /auth/signup', { username: this.state.name, email: this.state.email, password: this.state.password }, { withCredentials: true })
+>>>>>>> efeb202194296d51f708c8499f57575528c4f2b9
             .then(res => {
                 console.log(res.data, res.status)
 
