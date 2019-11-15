@@ -39,7 +39,7 @@ export default class GameCard extends Component {
     axios
       .get(`${this.state.url}auth/readsessions`, { withCredentials: true })
       .then(data => {
-        console.log(data.data);
+        console.log("read sessions:", data.data);
         this.setState({
           userOne: data.data.user
         });
@@ -57,19 +57,19 @@ export default class GameCard extends Component {
     if (event) {
       event.preventDefault();
     }
-    console.log(this.state.url);
+    
     axios
       .get(`${this.state.url}api/user`)
       .then(response => {
-        console.log("response", response.data);
+        console.log("challengers", response.data);
         let newState;
         // console.log(this.state)
         newState = response.data.map(el => {
           return { name: el.username, id: el._id };
         });
-        console.log(newState);
+        console.log("newState", newState);
         this.setState({ users: newState });
-        console.log(this.state);
+        console.log("setState", this.state);
       })
       .catch(function(error) {
         console.log(error);
@@ -85,15 +85,15 @@ export default class GameCard extends Component {
     let newStateHands = this.state.hands;
     newStateHands.push(newHand);
     console.log(newStateHands);
-    this.findTotal("one")
+    this.findGameScore("one")
     console.log(this.state.userOneTotal)
     this.setState({
-    userOnePlay: 0,
-    userOneCount: 0,
-    userOneCrib: 0,
-    userTwoPlay: 0,
-    userTwoCount: 0,
-    userTwoCrib: 0,
+      userOnePlay: 0,
+      userOneCount: 0,
+      userOneCrib: 0,
+      userTwoPlay: 0,
+      userTwoCount: 0,
+      userTwoCrib: 0,
       hands: newStateHands
     });
     //TODO: Alternate Cribs so non-crib doesn't equal zero
@@ -200,7 +200,7 @@ export default class GameCard extends Component {
 
   findGameScore = user => {
     let total = 0;
-    console.log(total)
+    console.log(total);
 
     this.state.hands.forEach(hand => {
       if (user === "one") {
@@ -224,14 +224,14 @@ export default class GameCard extends Component {
     this.state.hands.forEach(hand => {
       if (user === "one") {
         total +=
-        parseInt(hand["userOneCount"]) +
-        parseInt(hand["userOneCrib"]) +
-        parseInt(hand["userOnePlay"]);
+          parseInt(hand["userOneCount"]) +
+          parseInt(hand["userOneCrib"]) +
+          parseInt(hand["userOnePlay"]);
       } else if (user === "two") {
         total +=
-        parseInt(hand["userTwoCount"]) +
-        parseInt(hand["userTwoCrib"]) +
-        parseInt(hand["userTwoPlay"]);
+          parseInt(hand["userTwoCount"]) +
+          parseInt(hand["userTwoCrib"]) +
+          parseInt(hand["userTwoPlay"]);
       }
     });
     return total;
@@ -260,10 +260,8 @@ export default class GameCard extends Component {
       this.state.userOneSkunked++;
     }
   };
-  
 
   render() {
-   
     return (
       <div className="wrapper">
         <div className="user-two-populate">
@@ -309,6 +307,7 @@ export default class GameCard extends Component {
           <div className="box play-header">The Play</div>
           <input
             className="box user-one-play number"
+            value={this.state.userOnePlay}
             placeholder={this.state.userOnePlay}
             onChange={this.handleChange}
             type="number"
@@ -317,6 +316,7 @@ export default class GameCard extends Component {
           <input
             className="box user-two-play number"
             placeholder={this.state.userTwoPlay}
+            value={this.state.userTwoPlay}
             onChange={this.handleChange}
             type="number"
             name="userTwoPlay"
@@ -326,7 +326,7 @@ export default class GameCard extends Component {
           <input
             className="box user-one-count number"
             placeholder={this.state.userOneCount}
-
+            value={this.state.userOneCount}
             onChange={this.handleChange}
             type="number"
             name="userOneCount"
@@ -334,6 +334,7 @@ export default class GameCard extends Component {
           <input
             className="box user-two-count number"
             placeholder={this.state.userTwoCount}
+            value={this.state.userTwoCount}
             onChange={this.handleChange}
             type="number"
             name="userTwoCount"
@@ -343,6 +344,7 @@ export default class GameCard extends Component {
           <input
             className="box user-one-crib number"
             placeholder={this.state.userOneCrib}
+            value={this.state.userOneCrib}
             onChange={this.handleChange}
             type="number"
             name="userOneCrib"
@@ -350,19 +352,18 @@ export default class GameCard extends Component {
           <input
             className="box user-two-crib number"
             placeholder={this.state.userTwoCrib}
+            value={this.state.userTwoCrib}
             onChange={this.handleChange}
             type="number"
             name="userTwoCrib"
           ></input>
         </div>
 
-
         <div className="score hand-score">
           <div className="box hand-score-label">Hand Score</div>
           <div className="box user-one-hand">{this.findHandScore("one")}</div>
           <div className="box user-two-hand"> {this.findHandScore("two")}</div>
         </div>
-
 
         <div className="score game-score">
           <div className="box game-score-label">Game Score</div>
@@ -373,7 +374,8 @@ export default class GameCard extends Component {
         <div className="buttons">
           <button
             className="next-hand-button buttonBoxL label"
-            onClick={this.handleNextHandSubmit}>
+            onClick={this.handleNextHandSubmit}
+          >
             Next Hand
           </button>
           <button
@@ -385,7 +387,7 @@ export default class GameCard extends Component {
         </div>
 
         <div className="average-wrapper">
-          <div className="average-header">Averages</div>
+          <div className="average-title">Averages</div>
           <div className="averages">
             <div className="box play-avg-label">The Play</div>
             <div className="box user-one-play-avg" type="number">

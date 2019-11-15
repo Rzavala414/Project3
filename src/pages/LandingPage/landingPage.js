@@ -20,7 +20,10 @@ export default class LandingPage extends Component {
     render() {
         return (
                 <div className="openingDiv">
-                    <h1 className="cribSmack">CribSmack</h1>
+                    <h1 className="cribsmack">CribSmack</h1>
+                    <div className="landing-caption">
+                        <h3>A little bit of cribbage, a whole lot of smack-talk.</h3>
+                         </div>
                     {this.renderRedirect()}
                     <button className="getStrtdButton" onClick={this.setRedirect}>Get Started</button>
                 </div>

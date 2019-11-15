@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgba(64, 98, 187, 1);
+}
 .openingDiv {
     height: 100vh;
     position: relative;
@@ -9,27 +11,29 @@
     background-color: rgba(64, 98, 187, 1);
 }
 
-.cribSmack {
+.cribsmack {
     font-family: 'Permanent Marker', cursive;
-    font-size: 4rem;
+    font-size: 7rem;
     color: rgba(244, 91, 105, 1);
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+.landing-caption {
+    margin-top: 5rem;
+    color:rgb(52, 230, 230);
+
+
+}
+
 .getStrtdButton {
-    width:20%;
+    min-width:20%;
+    min-height: 10%;
     min-width: 200px;
     margin-top: 10rem;
     border-radius: 1rem;
     box-shadow: 5px 5px 26px 5px rgba(0, 0, 0, 0.247);
-    background: rgba(89, 195, 195, 1);
-    color:rgba(235, 235, 235, 1);
-}
+    background: rgb(52, 230, 230);
+    color: rgba(64, 98, 187, 1);
+    font-size: 1.5rem;
 
-.colors {
-    color1: rgba(82, 72, 156, 1);
-    color2: rgba(64, 98, 187, 1);
-    color3: rgba(89, 195, 195, 1);
-    color4: rgba(235, 235, 235, 1);
-    color5: rgba(244, 91, 105, 1);
 }
